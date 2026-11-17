@@ -219,11 +219,12 @@ def build_reject_title_regex(cfg):
     if "devops" in excluded_lower:
         patterns.extend([r"devops", r"sre\b", r"infrastructure engineer", r"sysadmin", r"system administrator"])
 
-    if max_yoe <= 2:
-        patterns.extend([
-            r"vp\b", r"director", r"chief", r"head of", r"lead\b",
-            r"principal", r"staff\b", r"architect", r"manager\b", r"senior", r"sr\b", r"expert"
-        ])
+    # Leadership / very-senior titles are always rejected, regardless of max_yoe.
+    # "Senior" / "Sr" are intentionally NOT filtered here (left to the YOE guard + AI check).
+    patterns.extend([
+        r"vp\b", r"director", r"chief", r"head of", r"lead\b",
+        r"principal", r"staff\b", r"architect", r"manager\b", r"expert"
+    ])
 
     return re.compile(r"\b(" + "|".join(patterns) + r")\b", re.IGNORECASE)
 

@@ -23,6 +23,7 @@ import re
 import json
 import time
 import hashlib
+import threading
 from datetime import datetime
 from urllib.parse import urljoin, urlparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -622,7 +623,29 @@ def scrape_comeet_board(company_info, slug, uid):
     return True, candidates
 
 
+# Workday tenants share infrastructure and answer bursts with HTTP 429, so scrape one tenant at a time.
+WORKDAY_LOCK = threading.Lock()
+
+
+def workday_request(method, url, **kwargs):
+    """Workday request with a short pause and backoff on HTTP 429/503 (honors Retry-After)."""
+    for attempt in range(5):
+        time.sleep(0.4)
+        r = requests.request(method, url, **kwargs)
+        if r.status_code not in (429, 503):
+            return r
+        retry_after = r.headers.get("Retry-After", "")
+        wait = int(retry_after) if retry_after.isdigit() else 5 * (2 ** attempt)
+        time.sleep(min(wait, 60))
+    return r
+
+
 def scrape_workday_board(company_info, scheme, host, path_parts):
+    with WORKDAY_LOCK:
+        return _scrape_workday_board(company_info, scheme, host, path_parts)
+
+
+def _scrape_workday_board(company_info, scheme, host, path_parts):
     """
     Uses Workday's public CXS JSON API. Applies the country location facet so only target-country
     jobs are listed, then fetches each title-matching job's description.
@@ -639,7 +662,7 @@ def scrape_workday_board(company_info, scheme, host, path_parts):
 
     def list_jobs(offset, facets):
         body = {"appliedFacets": facets, "limit": 20, "offset": offset, "searchText": ""}
-        r = requests.post(f"{base}/jobs", headers=api_headers, json=body, timeout=20)
+        r = workday_request("POST", f"{base}/jobs", headers=api_headers, json=body, timeout=20)
         r.raise_for_status()
         return r.json()
 
@@ -688,7 +711,7 @@ def scrape_workday_board(company_info, scheme, host, path_parts):
         loc = p.get("locationsText") or country
         text = ""
         try:
-            d = requests.get(base + ext, headers=api_headers, timeout=15).json().get("jobPostingInfo", {})
+            d = workday_request("GET", base + ext, headers=api_headers, timeout=15).json().get("jobPostingInfo", {})
             text = BeautifulSoup(d.get("jobDescription", ""), "html.parser").get_text("\n", strip=True)
             loc = d.get("location") or loc
         except Exception:

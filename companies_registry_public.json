@@ -1318,7 +1318,8 @@
   {
     "name": "ServiceNow Israel",
     "career_url": "https://careers.servicenow.com/",
-    "category": "Enterprise Cloud Platforms"
+    "category": "Enterprise Cloud Platforms",
+    "official_scrape_url": "https://jobs.smartrecruiters.com/ServiceNow"
   },
   {
     "name": "Shavit Software",
@@ -1680,5 +1681,51 @@
     "career_url": "https://www.camtek.com/careers/",
     "official_scrape_url": "https://www.comeet.com/jobs/camtek/F4.00D",
     "category": "Semiconductors"
+  },
+  {
+    "name": "enso",
+    "career_url": "https://www.enso.bot/careers",
+    "category": "Generative AI"
+  },
+  {
+    "name": "Glow",
+    "career_url": "https://jobs.ashbyhq.com/glow",
+    "official_scrape_url": "https://jobs.ashbyhq.com/glow",
+    "category": "Core Tech / R&D"
+  },
+  {
+    "name": "Oligo",
+    "career_url": "https://www.oligo.security/careers",
+    "official_scrape_url": "https://www.comeet.com/jobs/oligosecurity/5A.00B",
+    "category": "Cybersecurity"
+  },
+  {
+    "name": "Onyx Security",
+    "career_url": "https://www.onyx.security/careers",
+    "official_scrape_url": "https://www.comeet.com/jobs/onyxsecurity/BA.005",
+    "category": "Cybersecurity"
+  },
+  {
+    "name": "AITAN",
+    "career_url": "https://www.comeet.com/jobs/aitan/FA.006",
+    "official_scrape_url": "https://www.comeet.com/jobs/aitan/FA.006",
+    "category": "Core Tech / R&D"
+  },
+  {
+    "name": "HyperGuest",
+    "career_url": "https://www.hyperguest.com/jobs",
+    "official_scrape_url": "https://www.comeet.com/jobs/hyperguest/09.00B",
+    "category": "Core Tech / R&D"
+  },
+  {
+    "name": "Faye",
+    "career_url": "https://www.withfaye.com/careers/",
+    "category": "Insurtech / AI"
+  },
+  {
+    "name": "Innovid (Mediaocean)",
+    "career_url": "https://jobs.smartrecruiters.com/Mediaocean1",
+    "official_scrape_url": "https://jobs.smartrecruiters.com/Mediaocean1",
+    "category": "Core Tech / R&D"
   }
 ]

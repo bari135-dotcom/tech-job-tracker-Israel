@@ -529,7 +529,53 @@ def try_ats_api_scrape(company_info, url):
         if handled:
             return True, candidates
 
+    # 6. SmartRecruiters (jobs.smartrecruiters.com/<company-id>) - official public Posting API
+    if "smartrecruiters.com" in host and path_parts:
+        handled, candidates = scrape_smartrecruiters_board(company_info, path_parts[0])
+        if handled:
+            return True, candidates
+
     return False, []
+
+
+def scrape_smartrecruiters_board(company_info, company_id):
+    api = f"https://api.smartrecruiters.com/v1/companies/{company_id}/postings"
+    params = {"limit": 100, "offset": 0}
+    if IS_ISRAEL_TARGET:
+        params["country"] = "il"
+    postings = []
+    try:
+        while True:
+            r = requests.get(api, params=params, headers=HEADERS, timeout=15)
+            r.raise_for_status()
+            data = r.json()
+            batch = data.get("content", [])
+            postings.extend(batch)
+            params["offset"] += len(batch)
+            if not batch or params["offset"] >= min(data.get("totalFound", 0), 1000):
+                break
+    except Exception:
+        return False, []
+
+    candidates = []
+    for p in postings:
+        title = (p.get("name") or "").strip()
+        job_url = f"https://jobs.smartrecruiters.com/{company_id}/{p.get('id')}"
+        if not p.get("id") or not is_title_candidate(title, job_url):
+            continue
+        loc_info = p.get("location") or {}
+        loc = ", ".join(x for x in (loc_info.get("city"), loc_info.get("country", "").upper()) if x) or "Unspecified"
+        text = ""
+        try:
+            d = requests.get(f"{api}/{p['id']}", headers=HEADERS, timeout=15).json()
+            sections = (d.get("jobAd") or {}).get("sections") or {}
+            html = "\n".join((sections.get(k) or {}).get("text", "")
+                             for k in ("jobDescription", "qualifications", "additionalInformation"))
+            text = BeautifulSoup(html, "html.parser").get_text("\n", strip=True)
+        except Exception:
+            pass
+        candidates.append(_ats_candidate(company_info, title, job_url, loc, text))
+    return True, candidates
 
 
 def _ats_candidate(company_info, title, job_url, loc, text):
@@ -562,8 +608,11 @@ def scrape_comeet_board(company_info, slug, uid):
     candidates = []
     for p in positions:
         loc_info = p.get("location") or {}
-        if IS_ISRAEL_TARGET and loc_info.get("country") and loc_info.get("country") != "IL":
-            continue
+        if IS_ISRAEL_TARGET:
+            if loc_info.get("country") and loc_info.get("country") != "IL":
+                continue
+            if not loc_info.get("country") and not is_ats_location_in_target(loc_info.get("name") or loc_info.get("city")):
+                continue
         title = (p.get("name") or "").strip()
         job_url = p.get("url_comeet_hosted_page") or p.get("url_active_page") or ""
         if not job_url or not is_title_candidate(title, job_url):

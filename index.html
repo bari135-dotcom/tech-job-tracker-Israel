@@ -684,6 +684,134 @@
       background: var(--status-red-bg);
     }
 
+    /* ---- Status pipeline ---- */
+    :root {
+      --st-gray: #737373;     --st-gray-bg: #F1F1F1;
+      --st-yellow: #A16207;   --st-yellow-bg: #FEF9C3;
+      --st-orange: #C2410C;   --st-orange-bg: #FFEDD5;
+      --st-purple: #7E22CE;   --st-purple-bg: #F3E8FF;
+      --st-green: #15803D;    --st-green-bg: #DCFCE7;
+      --st-darkgreen: #FFFFFF; --st-darkgreen-bg: #166534;
+      --st-red: #B91C1C;      --st-red-bg: #FEE2E2;
+    }
+
+    .stat-active .stat-icon-wrap { background: var(--st-orange-bg); color: var(--st-orange); }
+    .stat-followup .stat-icon-wrap { background: var(--st-yellow-bg); color: var(--st-yellow); }
+
+    .status-select {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      padding: 7px 12px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      max-width: 210px;
+      text-overflow: ellipsis;
+      padding-left: 26px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23737373' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left 9px center;
+    }
+    .status-select-sm { padding: 4px 8px; font-size: 0.8rem; max-width: 190px; }
+    .status-gray { background-color: var(--st-gray-bg); color: var(--st-gray); }
+    .status-yellow { background-color: var(--st-yellow-bg); color: var(--st-yellow); }
+    .status-orange { background-color: var(--st-orange-bg); color: var(--st-orange); }
+    .status-purple { background-color: var(--st-purple-bg); color: var(--st-purple); }
+    .status-green { background-color: var(--st-green-bg); color: var(--st-green); }
+    .status-darkgreen { background-color: var(--st-darkgreen-bg); color: var(--st-darkgreen); }
+    .status-red { background-color: var(--st-red-bg); color: var(--st-red); }
+    .status-select option { background: #FFFFFF; color: var(--text-primary); }
+
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+    .dot-gray { background: #A3A3A3; }
+    .dot-yellow { background: #EAB308; }
+    .dot-orange { background: #F97316; }
+    .dot-purple { background: #A855F7; }
+    .dot-green { background: #22C55E; }
+    .dot-darkgreen { background: #166534; }
+    .dot-red { background: #EF4444; }
+
+    .job-card.status-border-yellow { border-top: 3px solid #EAB308; }
+    .job-card.status-border-orange { border-top: 3px solid #F97316; }
+    .job-card.status-border-purple { border-top: 3px solid #A855F7; }
+    .job-card.status-border-green { border-top: 3px solid #22C55E; }
+    .job-card.status-border-darkgreen { border-top: 3px solid #166534; }
+    .job-card.status-border-red { border-top: 3px solid #EF4444; }
+
+    .personal-notes {
+      font-size: 0.84rem;
+      color: var(--text-primary);
+      background: var(--bg-canvas);
+      border: 1px dashed var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 7px 10px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .followup-badge {
+      background: var(--st-yellow-bg) !important;
+      color: var(--st-yellow) !important;
+      border-color: #FDE68A !important;
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+    .view-toggle { display: flex; background: var(--bg-subtle); border-radius: var(--radius-sm); padding: 3px; }
+    .view-btn {
+      border: none; background: transparent; padding: 6px 12px; border-radius: 6px;
+      font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); cursor: pointer;
+    }
+    .view-btn.active { background: var(--bg-surface); color: var(--text-primary); box-shadow: 0 1px 2px rgba(0,0,0,0.08); }
+
+    /* Table view */
+    .jobs-table-wrap {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+    }
+    .jobs-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 720px; }
+    .jobs-table th {
+      text-align: right; font-weight: 700; color: var(--text-secondary); font-size: 0.8rem;
+      padding: 10px 12px; border-bottom: 1px solid var(--border-light); background: var(--bg-canvas);
+    }
+    .jobs-table td { padding: 10px 12px; border-bottom: 1px solid var(--border-subtle); vertical-align: top; }
+    .jobs-table tr { cursor: pointer; }
+    .jobs-table tbody tr:hover { background: var(--bg-hover); }
+    .jobs-table tr.row-followup td:first-child { box-shadow: inset -3px 0 0 #EAB308; }
+    .jobs-table a { color: var(--ig-blue); text-decoration: none; font-weight: 600; }
+    .jobs-table a:hover { text-decoration: underline; }
+    .cell-company { font-weight: 700; white-space: nowrap; }
+    .cell-notes { min-width: 200px; max-width: 320px; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .cell-date { white-space: nowrap; color: var(--text-secondary); }
+    .cell-sub { color: var(--text-muted); font-size: 0.78rem; margin-top: 3px; }
+    .jobs-table .followup-badge { display: inline-block; margin-top: 4px; padding: 1px 6px; border-radius: 6px; }
+
+    /* Details modal */
+    .modal-wide { max-width: 520px; max-height: calc(100vh - 32px); overflow-y: auto; }
+    .modal-sub { font-size: 0.86rem; color: var(--text-secondary); }
+    .field-label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin: 12px 0 5px; }
+    .field-input { width: 100%; }
+    .text-input {
+      background: var(--bg-subtle); border: 1px solid transparent; border-radius: var(--radius-sm);
+      padding: 9px 12px; font-size: 0.9rem; color: var(--text-primary); outline: none; resize: vertical;
+    }
+    .text-input:focus { background: var(--bg-surface); border-color: var(--border-light); }
+    .history-list { list-style: none; font-size: 0.84rem; margin-bottom: 18px; max-height: 140px; overflow-y: auto; }
+    .history-list li { padding: 4px 0; border-bottom: 1px solid var(--border-subtle); }
+    .history-list li span { color: var(--text-muted); display: inline-block; min-width: 44px; }
+
+    @media (max-width: 640px) {
+      .header-actions .btn span { display: none; }
+      .card-actions { flex-wrap: wrap; }
+      .status-select { max-width: 170px; }
+    }
+
   </style>
 </head>
 <body>
@@ -702,11 +830,19 @@
         </div>
         <div>
           <div class="brand-title">Israel Tech Jobs</div>
-          <div class="brand-subtitle">מעקב משרות פיתוח, AI וסטודנטים (0–2 שנות ניסיון)</div>
+          <div class="brand-subtitle">מעקב משרות פיתוח, AI וסטודנטים</div>
         </div>
       </div>
 
       <div class="header-actions">
+        <button id="backupBtn" class="btn btn-referrals" title="ייצוא וייבוא של הסטטוסים וההערות שלך">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>גיבוי</span>
+        </button>
         <button id="referralsBtn" class="btn btn-referrals" title="טעינת רפרלים אישיים בדפדפן בלבד">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -728,7 +864,7 @@
 
   <main class="container">
 
-    <!-- Stats Cards -->
+    <!-- Pipeline overview -->
     <div class="stats-bar">
       <div class="stat-card stat-new active" data-tab="new">
         <div class="stat-icon-wrap">
@@ -744,7 +880,22 @@
         </div>
       </div>
 
-      <div class="stat-card stat-applied" data-tab="applied">
+      <div class="stat-card stat-active" data-tab="active">
+        <div class="stat-icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <div>
+          <div class="stat-val" id="countActive">0</div>
+          <div class="stat-label">בתהליך הפניה</div>
+        </div>
+      </div>
+
+      <div class="stat-card stat-applied" data-tab="submitted">
         <div class="stat-icon-wrap">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
@@ -752,33 +903,21 @@
           </svg>
         </div>
         <div>
-          <div class="stat-val" id="countApplied">0</div>
-          <div class="stat-label">משרות שהגשתי</div>
+          <div class="stat-val" id="countSubmitted">0</div>
+          <div class="stat-label">הוגשתי / ריאיון</div>
         </div>
       </div>
 
-      <div class="stat-card stat-saved" data-tab="saved">
+      <div class="stat-card stat-followup" data-tab="followup">
         <div class="stat-icon-wrap">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
           </svg>
         </div>
         <div>
-          <div class="stat-val" id="countSaved">0</div>
-          <div class="stat-label">שמורות להמשך</div>
-        </div>
-      </div>
-
-      <div class="stat-card stat-dismissed" data-tab="dismissed">
-        <div class="stat-icon-wrap">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="3 6 5 6 21 6"></polyline>
-            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-          </svg>
-        </div>
-        <div>
-          <div class="stat-val" id="countDismissed">0</div>
-          <div class="stat-label">הוסרו / ארכיון</div>
+          <div class="stat-val" id="countFollowup">0</div>
+          <div class="stat-label">דורש מעקב (שבוע בלי שינוי)</div>
         </div>
       </div>
     </div>
@@ -793,7 +932,7 @@
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
           </span>
-          <input type="text" id="searchInput" placeholder="חיפוש חברה, תפקיד, מיקום או איש קשר...">
+          <input type="text" id="searchInput" placeholder="חיפוש חברה, תפקיד, מיקום, איש קשר או הערה...">
         </div>
 
         <select id="referralFilter" class="filter-select">
@@ -811,51 +950,87 @@
           <option value="ai">AI / ML / Data</option>
           <option value="student">סטודנט / מתמחה</option>
         </select>
+
+        <div class="view-toggle" role="group" aria-label="תצוגה">
+          <button class="view-btn active" data-view="cards" title="תצוגת כרטיסים">כרטיסים</button>
+          <button class="view-btn" data-view="table" title="תצוגת טבלה">טבלה</button>
+        </div>
       </div>
 
-      <div class="tabs-row">
-        <button class="tab-btn active" data-tab="new">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="7" height="7"></rect>
-            <rect x="14" y="3" width="7" height="7"></rect>
-            <rect x="14" y="14" width="7" height="7"></rect>
-            <rect x="3" y="14" width="7" height="7"></rect>
-          </svg>
-          <span>חדשות</span>
-          <span class="tab-badge" id="badgeNew">0</span>
-        </button>
-
-        <button class="tab-btn" data-tab="applied">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-          <span>הגשתי</span>
-          <span class="tab-badge" id="badgeApplied">0</span>
-        </button>
-
-        <button class="tab-btn" data-tab="saved">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-          </svg>
-          <span>שמורות</span>
-          <span class="tab-badge" id="badgeSaved">0</span>
-        </button>
-
-        <button class="tab-btn" data-tab="dismissed">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="3 6 5 6 21 6"></polyline>
-            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-          </svg>
-          <span>הוסרו</span>
-          <span class="tab-badge" id="badgeDismissed">0</span>
-        </button>
-      </div>
+      <div class="tabs-row" id="tabsRow"></div>
     </div>
 
-    <!-- Jobs Grid -->
+    <!-- Jobs Grid / Table -->
     <div id="jobsGrid" class="jobs-grid"></div>
 
   </main>
+
+  <!-- Job Details Modal -->
+  <div id="detailsModal" class="modal-backdrop">
+    <div class="modal-card modal-wide">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title" id="detailsTitle"></div>
+          <div class="modal-sub" id="detailsCompany"></div>
+        </div>
+        <button id="closeDetailsBtn" class="btn btn-icon" title="סגור">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <label class="field-label" for="detailsStatus">סטטוס</label>
+      <select id="detailsStatus" class="filter-select field-input"></select>
+
+      <div id="detailsReasonWrap" class="field-wrap">
+        <label class="field-label" for="detailsReason">סיבה</label>
+        <select id="detailsReason" class="filter-select field-input"></select>
+      </div>
+
+      <label class="field-label" for="detailsContacts">מי מגיש אותי</label>
+      <input id="detailsContacts" class="field-input text-input" type="text" placeholder="למשל: יעל, אסף כהן">
+
+      <label class="field-label" for="detailsNotes">הערות</label>
+      <textarea id="detailsNotes" class="field-input text-input" rows="4" placeholder="למשל: ביקש קו״ח · ריאיון HR ב-12.11 · צריך מספר משרה"></textarea>
+
+      <div class="field-label">היסטוריה</div>
+      <ol id="detailsHistory" class="history-list"></ol>
+
+      <div class="modal-actions">
+        <button id="saveDetailsBtn" class="btn btn-primary">שמור</button>
+        <button id="copyRowBtn" class="btn btn-refresh" title="מעתיק את המשרה כשורה בפורמט של טבלת המעקב">העתק שורה לטבלה</button>
+        <a id="detailsLink" class="btn btn-refresh" target="_blank" rel="noopener noreferrer">פתח משרה</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Backup Modal -->
+  <div id="backupModal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title">גיבוי והעברה בין מכשירים</div>
+        <button id="closeBackupBtn" class="btn btn-icon" title="סגור">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <p class="modal-desc">
+        הסטטוסים, אנשי הקשר וההערות נשמרים רק בדפדפן הזה ולא עולים ל-GitHub.
+        <b>ייצוא</b> מוריד קובץ גיבוי. <b>ייבוא</b> של קובץ ממכשיר אחר ממזג אותו עם מה שכבר יש כאן:
+        לכל משרה נשמרת הגרסה שעודכנה אחרונה.
+      </p>
+      <div id="backupStatus" class="modal-status"></div>
+      <input type="file" id="backupFileInput" accept=".json" style="display: none;">
+      <div class="modal-actions">
+        <button id="exportBackupBtn" class="btn btn-primary">ייצוא לקובץ</button>
+        <button id="importBackupBtn" class="btn btn-refresh">ייבוא מקובץ</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Private Referrals Modal -->
   <div id="referralsModal" class="modal-backdrop">
@@ -886,10 +1061,46 @@
   <div id="toast" class="toast"></div>
 
   <script>
+    // ---- Status model -------------------------------------------------------
+    const STATUSES = [
+      { id: 'new',                label: 'חדשה',                       color: 'gray' },
+      { id: 'pending_connection', label: 'ממתין לאישור חברות',          color: 'yellow' },
+      { id: 'referral_requested', label: 'ביקשתי הפניה',                color: 'orange' },
+      { id: 'cv_sent',            label: 'שלחתי קו״ח – ממתין להגשה',    color: 'purple' },
+      { id: 'applied',            label: 'הוגשתי',                      color: 'green' },
+      { id: 'interview',          label: 'ריאיון',                      color: 'darkgreen' },
+      { id: 'rejected',           label: 'לא רלוונטי / נדחיתי',         color: 'red' }
+    ];
+    const STATUS_BY_ID = Object.fromEntries(STATUSES.map(s => [s.id, s]));
+    const REJECT_REASONS = ['', 'דחייה', 'המשרה נסגרה', 'לא מתאים'];
+    const ACTIVE_STATUSES = ['pending_connection', 'referral_requested', 'cv_sent'];
+    const SUBMITTED_STATUSES = ['applied', 'interview'];
+    const FOLLOWUP_DAYS = 7;
+
+    // Tabs: every status, plus grouped views used by the overview cards and the bookmark list.
+    const TABS = [
+      { id: 'new', label: 'חדשות' },
+      { id: 'pending_connection', label: 'ממתין לחברות' },
+      { id: 'referral_requested', label: 'ביקשתי הפניה' },
+      { id: 'cv_sent', label: 'שלחתי קו״ח' },
+      { id: 'applied', label: 'הוגשתי' },
+      { id: 'interview', label: 'ריאיון' },
+      { id: 'saved', label: 'שמורות' },
+      { id: 'rejected', label: 'לא רלוונטי' },
+      { id: 'all', label: 'הכול' }
+    ];
+    const GROUP_TABS = {
+      active: { label: 'בתהליך הפניה', match: s => ACTIVE_STATUSES.includes(s.status) },
+      submitted: { label: 'הוגשתי / ריאיון', match: s => SUBMITTED_STATUSES.includes(s.status) },
+      followup: { label: 'דורש מעקב', match: s => needsFollowup(s) }
+    };
+
     let allJobs = [];
     let currentTab = 'new';
-    let userStates = JSON.parse(localStorage.getItem('job_tracker_states') || '{}');
-    let privateReferrals = JSON.parse(localStorage.getItem('job_tracker_referrals') || '{}');
+    let currentView = safeGet('job_tracker_view') || 'cards';
+    let userStates = migrateStates(JSON.parse(safeGet('job_tracker_states') || '{}'));
+    let privateReferrals = JSON.parse(safeGet('job_tracker_referrals') || '{}');
+    let openJobHash = null;
 
     const jobsGrid = document.getElementById('jobsGrid');
     const searchInput = document.getElementById('searchInput');
@@ -897,6 +1108,52 @@
     const roleFilter = document.getElementById('roleFilter');
     const toast = document.getElementById('toast');
     const refreshBtn = document.getElementById('refreshBtn');
+
+    function safeGet(key) {
+      try { return localStorage.getItem(key); } catch (e) { return null; }
+    }
+    function safeSet(key, value) {
+      try { localStorage.setItem(key, value); } catch (e) { showToast('לא ניתן לשמור בדפדפן הזה'); }
+    }
+
+    // Old boards stored only {status: new|applied|saved|dismissed}. Convert once, keep the bookmark as a flag.
+    function migrateStates(states) {
+      let changed = false;
+      Object.entries(states).forEach(([h, s]) => {
+        if (!s || typeof s !== 'object') { states[h] = { status: 'new' }; changed = true; return; }
+        if (s.status === 'saved') { s.status = 'new'; s.saved = true; changed = true; }
+        if (s.status === 'dismissed') { s.status = 'rejected'; s.reason = s.reason || 'לא מתאים'; changed = true; }
+        if (!STATUS_BY_ID[s.status]) { s.status = 'new'; changed = true; }
+        // Without a timestamp, a merge-import from another device would always overwrite this entry.
+        if (!s.updated_at) { s.updated_at = new Date().toISOString(); changed = true; }
+        if (!Array.isArray(s.history)) {
+          s.history = s.status !== 'new' ? [{ status: s.status, at: s.updated_at || new Date().toISOString() }] : [];
+          changed = true;
+        }
+      });
+      if (changed) safeSet('job_tracker_states', JSON.stringify(states));
+      return states;
+    }
+
+    function getState(h) {
+      return userStates[h] || { status: 'new', history: [] };
+    }
+
+    function ensureState(h) {
+      if (!userStates[h]) userStates[h] = { status: 'new', history: [] };
+      return userStates[h];
+    }
+
+    function lastStatusChange(s) {
+      const last = (s.history || []).slice(-1)[0];
+      return last ? new Date(last.at) : (s.updated_at ? new Date(s.updated_at) : null);
+    }
+
+    function needsFollowup(s) {
+      if (!ACTIVE_STATUSES.includes(s.status)) return false;
+      const since = lastStatusChange(s);
+      return !!since && (Date.now() - since.getTime()) > FOLLOWUP_DAYS * 86400000;
+    }
 
     function computeHash(company, title, url) {
       const str = `${(company || '').trim().toLowerCase()}::${(title || '').trim().toLowerCase()}::${(url || '').trim().toLowerCase()}`;
@@ -909,7 +1166,7 @@
     }
 
     function saveUserStates() {
-      localStorage.setItem('job_tracker_states', JSON.stringify(userStates));
+      safeSet('job_tracker_states', JSON.stringify(userStates));
       updateCounts();
       renderJobs();
     }
@@ -930,14 +1187,9 @@
         renderJobs();
       } catch (err) {
         console.warn('Could not load seen_jobs.json:', err);
+        jobsGrid.className = 'jobs-grid';
         jobsGrid.innerHTML = `
           <div class="empty-state">
-            <div class="empty-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-              </svg>
-            </div>
             <h3>לא נמצא קובץ seen_jobs.json</h3>
             <p>וודא שהקובץ <code>seen_jobs.json</code> נמצא באותה תיקייה של האתר ב-GitHub.</p>
           </div>
@@ -945,37 +1197,50 @@
       }
     }
 
+    function matchesTab(tab, s) {
+      if (tab === 'all') return true;
+      if (tab === 'saved') return !!s.saved;
+      if (GROUP_TABS[tab]) return GROUP_TABS[tab].match(s);
+      return s.status === tab;
+    }
+
     function updateCounts() {
-      let counts = { new: 0, applied: 0, saved: 0, dismissed: 0 };
+      const counts = {};
+      TABS.forEach(t => counts[t.id] = 0);
+      Object.keys(GROUP_TABS).forEach(t => counts[t] = 0);
       allJobs.forEach(job => {
-        const h = computeHash(job.company, job.title, job.url);
-        const state = userStates[h]?.status || 'new';
-        if (counts[state] !== undefined) counts[state]++;
-        else counts.new++;
+        const s = getState(computeHash(job.company, job.title, job.url));
+        Object.keys(counts).forEach(t => { if (matchesTab(t, s)) counts[t]++; });
       });
 
       document.getElementById('countNew').textContent = counts.new;
-      document.getElementById('countApplied').textContent = counts.applied;
-      document.getElementById('countSaved').textContent = counts.saved;
-      document.getElementById('countDismissed').textContent = counts.dismissed;
-
-      document.getElementById('badgeNew').textContent = counts.new;
-      document.getElementById('badgeApplied').textContent = counts.applied;
-      document.getElementById('badgeSaved').textContent = counts.saved;
-      document.getElementById('badgeDismissed').textContent = counts.dismissed;
+      document.getElementById('countActive').textContent = counts.active;
+      document.getElementById('countSubmitted').textContent = counts.submitted;
+      document.getElementById('countFollowup').textContent = counts.followup;
+      renderTabs(counts);
     }
 
-    function renderJobs() {
+    function renderTabs(counts) {
+      const groupTab = GROUP_TABS[currentTab]
+        ? `<button class="tab-btn active" data-tab="${currentTab}"><span>${GROUP_TABS[currentTab].label}</span><span class="tab-badge">${counts[currentTab]}</span></button>`
+        : '';
+      document.getElementById('tabsRow').innerHTML = groupTab + TABS.map(t => {
+        const dot = STATUS_BY_ID[t.id] ? `<span class="status-dot dot-${STATUS_BY_ID[t.id].color}"></span>` : '';
+        return `<button class="tab-btn ${t.id === currentTab ? 'active' : ''}" data-tab="${t.id}">${dot}<span>${t.label}</span><span class="tab-badge">${counts[t.id]}</span></button>`;
+      }).join('');
+      document.querySelectorAll('#tabsRow .tab-btn').forEach(el => el.addEventListener('click', () => setTab(el.dataset.tab)));
+    }
+
+    function filteredJobs() {
       const q = searchInput.value.trim().toLowerCase();
       const refFilter = referralFilter.value;
       const role = roleFilter.value;
 
-      const filtered = allJobs.filter(job => {
-        const h = computeHash(job.company, job.title, job.url);
-        const state = userStates[h]?.status || 'new';
-        if (state !== currentTab) return false;
+      return allJobs.filter(job => {
+        const s = getState(computeHash(job.company, job.title, job.url));
+        if (!matchesTab(currentTab, s)) return false;
 
-        const fullText = `${job.company} ${job.title} ${job.referral_contact || ''} ${job.location || ''} ${job.experience || ''}`.toLowerCase();
+        const fullText = `${job.company} ${job.title} ${job.referral_contact || ''} ${job.location || ''} ${job.experience || ''} ${s.contacts || ''} ${s.notes || ''}`.toLowerCase();
         if (q && !fullText.includes(q)) return false;
 
         if (refFilter !== 'all') {
@@ -995,19 +1260,29 @@
           if (role === 'ai' && !title.includes('ai') && !title.includes('ml') && !title.includes('data') && !title.includes('learning')) return false;
           if (role === 'student' && !title.includes('student') && !title.includes('intern') && !title.includes('סטודנט')) return false;
         }
-
         return true;
       });
+    }
+
+    function statusSelect(h, s, extraClass) {
+      return `<select class="status-select status-${STATUS_BY_ID[s.status].color} ${extraClass || ''}" onchange="setStatus('${h}', this.value)" onclick="event.stopPropagation()" title="שנה סטטוס">
+        ${STATUSES.map(st => `<option value="${st.id}" ${st.id === s.status ? 'selected' : ''}>${st.label}</option>`).join('')}
+      </select>`;
+    }
+
+    function statusLabel(s) {
+      const base = STATUS_BY_ID[s.status].label;
+      return s.status === 'rejected' && s.reason ? `${base} (${s.reason})` : base;
+    }
+
+    function renderJobs() {
+      const filtered = filteredJobs();
+      document.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view === currentView));
 
       if (filtered.length === 0) {
+        jobsGrid.className = 'jobs-grid';
         jobsGrid.innerHTML = `
           <div class="empty-state">
-            <div class="empty-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-            </div>
             <h3>אין משרות להצגה בקטגוריה זו</h3>
             <p>נסה לשנות את הסינון או לעבור ללשונית אחרת.</p>
           </div>
@@ -1015,13 +1290,39 @@
         return;
       }
 
+      if (currentView === 'table') {
+        jobsGrid.className = 'jobs-table-wrap';
+        jobsGrid.innerHTML = `
+          <table class="jobs-table">
+            <thead><tr><th>חברה</th><th>משרה</th><th>סטטוס</th><th>מי מגיש אותי / הערות</th><th>עודכן</th></tr></thead>
+            <tbody>
+              ${filtered.map(job => {
+                const h = computeHash(job.company, job.title, job.url);
+                const s = getState(h);
+                const since = lastStatusChange(s);
+                const notes = [s.contacts, s.notes].filter(Boolean).join(' · ');
+                return `<tr onclick="openDetails('${h}')" class="${needsFollowup(s) ? 'row-followup' : ''}">
+                  <td class="cell-company">${escapeHtml(job.company)}</td>
+                  <td><a href="${escapeHtml(job.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">${escapeHtml(job.title)}</a></td>
+                  <td>${statusSelect(h, s, 'status-select-sm')}${s.status === 'rejected' && s.reason ? `<div class="cell-sub">${escapeHtml(s.reason)}</div>` : ''}</td>
+                  <td class="cell-notes">${escapeHtml(notes) || '<span class="cell-sub">—</span>'}</td>
+                  <td class="cell-date">${since ? formatDate(since.toISOString()) : formatDate(job.discovered_at)}${needsFollowup(s) ? '<div class="followup-badge">מעקב</div>' : ''}</td>
+                </tr>`;
+              }).join('')}
+            </tbody>
+          </table>`;
+        return;
+      }
+
+      jobsGrid.className = 'jobs-grid';
       jobsGrid.innerHTML = filtered.map(job => {
         const h = computeHash(job.company, job.title, job.url);
-        const state = userStates[h]?.status || 'new';
+        const s = getState(h);
         const refInfo = getJobReferral(job);
         const contact = refInfo.contact;
         const refType = refInfo.type;
         const initial = (job.company || '?').trim().charAt(0);
+        const color = STATUS_BY_ID[s.status].color;
 
         let pillClass = 'ref-direct';
         let pillText = 'הגשה ישירה';
@@ -1033,12 +1334,10 @@
           pillText = 'דנה (Elevation)';
         }
 
-        const isApplied = state === 'applied';
-        const isSaved = state === 'saved';
-        const isDismissed = state === 'dismissed';
+        const personal = [s.contacts ? `מגיש: ${s.contacts}` : '', s.notes || ''].filter(Boolean).join(' · ');
 
         return `
-          <div class="job-card ${isApplied ? 'is-applied' : ''} ${isSaved ? 'is-saved' : ''} ${isDismissed ? 'is-dismissed' : ''}">
+          <div class="job-card status-border-${color} ${s.status === 'rejected' ? 'is-dismissed' : ''}">
             <div>
               <div class="card-header">
                 <div class="company-row">
@@ -1051,75 +1350,40 @@
               <div class="job-title">${escapeHtml(job.title)}</div>
 
               <div class="job-meta">
-                <span class="meta-tag">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                  ${escapeHtml(job.location || 'ישראל')}
-                </span>
-
-                <span class="meta-tag">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                  </svg>
-                  ${escapeHtml(job.experience || '0-2 YOE')}
-                </span>
-
-                ${job.discovered_at ? `
-                <span class="meta-tag">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                  </svg>
-                  ${formatDate(job.discovered_at)}
-                </span>` : ''}
+                <span class="meta-tag">${escapeHtml(job.location || 'ישראל')}</span>
+                <span class="meta-tag">${escapeHtml(job.experience || '')}</span>
+                ${job.discovered_at ? `<span class="meta-tag">נמצאה ${formatDate(job.discovered_at)}</span>` : ''}
+                ${needsFollowup(s) ? `<span class="meta-tag followup-badge">דורש מעקב</span>` : ''}
               </div>
+
+              ${personal ? `<div class="personal-notes" onclick="openDetails('${h}')">${escapeHtml(personal)}</div>` : ''}
+              ${s.status === 'rejected' && s.reason ? `<div class="personal-notes">סיבה: ${escapeHtml(s.reason)}</div>` : ''}
             </div>
 
             <div class="card-actions">
               <div class="action-group">
                 <a href="${escapeHtml(job.url)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                  <span>הגש מועמדות</span>
+                  <span>למשרה</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="7" y1="17" x2="17" y2="7"></line>
                     <polyline points="7 7 17 7 17 17"></polyline>
                   </svg>
                 </a>
-
-                <button onclick="markStatus('${h}', 'applied')" class="btn btn-applied ${isApplied ? 'active' : ''}" title="סמן שהגשת מועמדות">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  <span>${isApplied ? 'הוגש' : 'הגשתי'}</span>
-                </button>
+                ${statusSelect(h, s)}
               </div>
 
               <div class="action-group">
-                <button onclick="toggleSave('${h}')" class="btn btn-icon ${isSaved ? 'active-bookmark' : ''}" title="שמור משרה">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="${isSaved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <button onclick="openDetails('${h}')" class="btn btn-icon" title="פרטים, אנשי קשר והערות">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 20h9"></path>
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                  </svg>
+                </button>
+                <button onclick="toggleSave('${h}')" class="btn btn-icon ${s.saved ? 'active-bookmark' : ''}" title="${s.saved ? 'הסר מהשמורות' : 'שמור משרה'}">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="${s.saved ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                   </svg>
                 </button>
-
-                ${isDismissed ? `
-                  <button onclick="markStatus('${h}', 'new')" class="btn btn-icon" title="החזר למשרות חדשות">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="9 14 4 9 9 4"></polyline>
-                      <path d="M20 20v-7a4 4 0 0 0-4-4H4"></path>
-                    </svg>
-                  </button>
-                ` : `
-                  <button onclick="markStatus('${h}', 'dismissed')" class="btn btn-icon" title="הסר מהלוח">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="18" y1="6" x2="6" y2="18"></line>
-                      <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                  </button>
-                `}
               </div>
             </div>
           </div>
@@ -1127,29 +1391,194 @@
       }).join('');
     }
 
-    window.markStatus = function(h, status) {
-      if (!userStates[h]) userStates[h] = {};
-      const prev = userStates[h].status;
-      userStates[h].status = (prev === status && status === 'applied') ? 'new' : status;
-      userStates[h].updated_at = new Date().toISOString();
+    function applyStatus(h, status) {
+      const s = ensureState(h);
+      if (s.status === status) return false;
+      s.status = status;
+      if (status !== 'rejected') delete s.reason;
+      s.history = s.history || [];
+      s.history.push({ status, at: new Date().toISOString() });
+      s.updated_at = new Date().toISOString();
+      return true;
+    }
 
-      const msgs = {
-        applied: 'המשרה סומנה כהוגשה ועברה ללשונית "הגשתי"',
-        dismissed: 'המשרה הוסרה מהלוח והועברה לארכיון',
-        new: 'המשרה הוחזרה למשרות החדשות'
-      };
-      showToast(msgs[userStates[h].status] || 'עודכן בהצלחה');
+    window.setStatus = function(h, status) {
+      if (!applyStatus(h, status)) return;
+      showToast(`הסטטוס עודכן: ${STATUS_BY_ID[status].label}`);
       saveUserStates();
+      if (status === 'rejected') openDetails(h); // let the user pick a reason
     };
 
     window.toggleSave = function(h) {
-      if (!userStates[h]) userStates[h] = {};
-      const isSaved = userStates[h].status === 'saved';
-      userStates[h].status = isSaved ? 'new' : 'saved';
-      showToast(isSaved ? 'המשרה הוסרה מהשמורות' : 'המשרה נשמרה בלשונית שמורות');
+      const s = ensureState(h);
+      s.saved = !s.saved;
+      s.updated_at = new Date().toISOString();
+      showToast(s.saved ? 'המשרה נשמרה בלשונית שמורות' : 'המשרה הוסרה מהשמורות');
       saveUserStates();
     };
 
+    // ---- Details modal ------------------------------------------------------
+    const detailsModal = document.getElementById('detailsModal');
+    const detailsStatus = document.getElementById('detailsStatus');
+    const detailsReason = document.getElementById('detailsReason');
+    const detailsReasonWrap = document.getElementById('detailsReasonWrap');
+    detailsStatus.innerHTML = STATUSES.map(st => `<option value="${st.id}">${st.label}</option>`).join('');
+    detailsReason.innerHTML = REJECT_REASONS.map(r => `<option value="${r}">${r || 'בחר סיבה (לא חובה)'}</option>`).join('');
+    detailsStatus.addEventListener('change', () => {
+      detailsReasonWrap.style.display = detailsStatus.value === 'rejected' ? 'block' : 'none';
+    });
+
+    function findJob(h) {
+      return allJobs.find(j => computeHash(j.company, j.title, j.url) === h);
+    }
+
+    window.openDetails = function(h) {
+      const job = findJob(h);
+      if (!job) return;
+      openJobHash = h;
+      const s = getState(h);
+      document.getElementById('detailsTitle').textContent = job.title;
+      document.getElementById('detailsCompany').textContent = `${job.company} · ${job.location || 'ישראל'}`;
+      detailsStatus.value = s.status;
+      detailsReason.value = s.reason || '';
+      detailsReasonWrap.style.display = s.status === 'rejected' ? 'block' : 'none';
+      document.getElementById('detailsContacts').value = s.contacts || '';
+      document.getElementById('detailsNotes').value = s.notes || '';
+      document.getElementById('detailsLink').href = job.url;
+      const hist = (s.history || []).slice().reverse();
+      document.getElementById('detailsHistory').innerHTML = hist.length
+        ? hist.map(e => `<li><span>${formatDate(e.at)}</span> ${escapeHtml(STATUS_BY_ID[e.status]?.label || e.status)}</li>`).join('')
+        : `<li class="cell-sub">עוד אין שינויי סטטוס. המשרה נמצאה ב-${formatDate(job.discovered_at)}.</li>`;
+      detailsModal.classList.add('open');
+    };
+
+    function closeDetails() {
+      detailsModal.classList.remove('open');
+      openJobHash = null;
+    }
+
+    document.getElementById('saveDetailsBtn').addEventListener('click', () => {
+      if (!openJobHash) return;
+      const h = openJobHash;
+      applyStatus(h, detailsStatus.value);
+      const s = ensureState(h);
+      if (s.status === 'rejected') s.reason = detailsReason.value || undefined;
+      s.contacts = document.getElementById('detailsContacts').value.trim();
+      s.notes = document.getElementById('detailsNotes').value.trim();
+      s.updated_at = new Date().toISOString();
+      closeDetails();
+      showToast('הפרטים נשמרו');
+      saveUserStates();
+    });
+
+    document.getElementById('copyRowBtn').addEventListener('click', async () => {
+      const job = findJob(openJobHash);
+      if (!job) return;
+      const s = getState(openJobHash);
+      const contacts = document.getElementById('detailsContacts').value.trim();
+      const notes = document.getElementById('detailsNotes').value.trim();
+      const reason = detailsStatus.value === 'rejected' ? detailsReason.value : '';
+      const statusText = STATUS_BY_ID[detailsStatus.value].label + (reason ? ` (${reason})` : '');
+      const comment = [contacts, notes].filter(Boolean).join(' · ');
+      const d = new Date();
+      const date = `${String(d.getDate()).padStart(2, '0')}.${String(d.getMonth() + 1).padStart(2, '0')}`;
+      const cells = [job.company, job.title, statusText, comment, date];
+      const html = `<table><tr><td><b>${escapeHtml(job.company)}</b></td><td><a href="${escapeHtml(job.url)}">${escapeHtml(job.title)}</a></td><td>${escapeHtml(statusText)}</td><td>${escapeHtml(comment)}</td><td>${date}</td></tr></table>`;
+      try {
+        if (window.ClipboardItem) {
+          await navigator.clipboard.write([new ClipboardItem({
+            'text/html': new Blob([html], { type: 'text/html' }),
+            'text/plain': new Blob([cells.join('\t')], { type: 'text/plain' })
+          })]);
+        } else {
+          await navigator.clipboard.writeText(cells.join('\t'));
+        }
+        showToast('השורה הועתקה. הדבק אותה בטבלת המעקב');
+      } catch (e) {
+        showToast('ההעתקה נכשלה בדפדפן הזה');
+      }
+    });
+
+    document.getElementById('closeDetailsBtn').addEventListener('click', closeDetails);
+    detailsModal.addEventListener('click', (e) => { if (e.target === detailsModal) closeDetails(); });
+
+    // ---- Backup (export / merge-import) ------------------------------------
+    const backupModal = document.getElementById('backupModal');
+    const backupFileInput = document.getElementById('backupFileInput');
+
+    function updateBackupUI() {
+      const tracked = Object.values(userStates).filter(s => s.status !== 'new' || s.saved || s.contacts || s.notes).length;
+      document.getElementById('backupStatus').textContent = `בדפדפן הזה יש מידע על ${tracked} משרות.`;
+    }
+
+    document.getElementById('backupBtn').addEventListener('click', () => {
+      updateBackupUI();
+      backupModal.classList.add('open');
+    });
+    document.getElementById('closeBackupBtn').addEventListener('click', () => backupModal.classList.remove('open'));
+    backupModal.addEventListener('click', (e) => { if (e.target === backupModal) backupModal.classList.remove('open'); });
+
+    document.getElementById('exportBackupBtn').addEventListener('click', () => {
+      const payload = { app: 'israel-tech-job-tracker', version: 2, exported_at: new Date().toISOString(), states: userStates, referrals: privateReferrals };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `job-tracker-backup-${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      showToast('קובץ הגיבוי הורד');
+    });
+
+    document.getElementById('importBackupBtn').addEventListener('click', () => backupFileInput.click());
+
+    backupFileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        try {
+          const parsed = JSON.parse(ev.target.result);
+          // Accept a full backup or a bare states object from an older export.
+          const incoming = migrateStatesCopy(parsed.states && typeof parsed.states === 'object' ? parsed.states : parsed);
+          let added = 0, updated = 0;
+          Object.entries(incoming).forEach(([h, s]) => {
+            const mine = userStates[h];
+            if (!mine) { userStates[h] = s; added++; return; }
+            const theirsAt = Date.parse(s.updated_at || 0) || 0;
+            const mineAt = Date.parse(mine.updated_at || 0) || 0;
+            if (theirsAt > mineAt) { userStates[h] = s; updated++; }
+          });
+          if (parsed.referrals && typeof parsed.referrals === 'object' && Object.keys(privateReferrals).length === 0) {
+            privateReferrals = parsed.referrals;
+            safeSet('job_tracker_referrals', JSON.stringify(privateReferrals));
+            updateReferralsUI();
+          }
+          saveUserStates();
+          updateBackupUI();
+          showToast(`יובאו ${added} משרות חדשות ועודכנו ${updated}`);
+        } catch (err) {
+          showToast('שגיאה בקריאת הקובץ — ודא שזהו קובץ גיבוי תקין');
+        }
+      };
+      reader.readAsText(file, 'UTF-8');
+      e.target.value = '';
+    });
+
+    function migrateStatesCopy(states) {
+      const copy = JSON.parse(JSON.stringify(states || {}));
+      Object.entries(copy).forEach(([h, s]) => {
+        if (!s || typeof s !== 'object') { delete copy[h]; return; }
+        if (s.status === 'saved') { s.status = 'new'; s.saved = true; }
+        if (s.status === 'dismissed') { s.status = 'rejected'; s.reason = s.reason || 'לא מתאים'; }
+        if (!STATUS_BY_ID[s.status]) s.status = 'new';
+        if (!Array.isArray(s.history)) s.history = s.status !== 'new' ? [{ status: s.status, at: s.updated_at || new Date().toISOString() }] : [];
+      });
+      return copy;
+    }
+
+    // ---- Shared helpers ------------------------------------------------------
     function escapeHtml(str) {
       if (!str) return '';
       return String(str)
@@ -1161,28 +1590,24 @@
     }
 
     function formatDate(isoStr) {
-      try {
-        const d = new Date(isoStr);
-        return `${d.getDate()}/${d.getMonth() + 1}`;
-      } catch (e) {
-        return '';
-      }
+      if (!isoStr) return '';
+      const d = new Date(isoStr);
+      return isNaN(d) ? '' : `${d.getDate()}/${d.getMonth() + 1}`;
     }
 
     function setTab(tab) {
       currentTab = tab;
-      document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.tab === tab);
-      });
-      document.querySelectorAll('.stat-card').forEach(card => {
-        card.classList.toggle('active', card.dataset.tab === tab);
-      });
+      document.querySelectorAll('.stat-card').forEach(card => card.classList.toggle('active', card.dataset.tab === tab));
+      updateCounts();
       renderJobs();
     }
 
-    document.querySelectorAll('.tab-btn, .stat-card').forEach(el => {
-      el.addEventListener('click', () => setTab(el.dataset.tab));
-    });
+    document.querySelectorAll('.stat-card').forEach(el => el.addEventListener('click', () => setTab(el.dataset.tab)));
+    document.querySelectorAll('.view-btn').forEach(el => el.addEventListener('click', () => {
+      currentView = el.dataset.view;
+      safeSet('job_tracker_view', currentView);
+      renderJobs();
+    }));
 
     searchInput.addEventListener('input', renderJobs);
     referralFilter.addEventListener('change', renderJobs);
@@ -1190,6 +1615,9 @@
     refreshBtn.addEventListener('click', () => {
       fetchJobs();
       showToast('הנתונים רועננו');
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { closeDetails(); backupModal.classList.remove('open'); }
     });
 
     function getJobReferral(job) {

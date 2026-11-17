@@ -348,5 +348,605 @@
     "url": "https://job-boards.eu.greenhouse.io/wedev/jobs/4871703101",
     "experience": "Junior role, welcomes entry-level fullstack developers.",
     "discovered_at": "2026-11-17T10:33:50.416023"
+  },
+  {
+    "company": "Aman Group",
+    "title": "מפתח/ת  React Native",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "מרכז (Center, Israel)",
+    "url": "https://www.aman-global.com/careers/%d7%a4%d7%99%d7%aa%d7%95%d7%97-%d7%aa%d7%95%d7%9b%d7%a0%d7%94/%d7%9e%d7%a4%d7%aa%d7%97-%d7%aa-react-native/",
+    "experience": "No explicit minimum years of experience stated, focuses on practical React Native skills.",
+    "discovered_at": "2026-11-17T14:44:34.001586"
+  },
+  {
+    "company": "AppsFlyer",
+    "title": "Data Analyst",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Herzliya",
+    "url": "https://careers.appsflyer.com/jobs/position/8882917002?gh_jid=8882917002",
+    "experience": "3-5 years of experience in data engineering or analytics engineering (minimum 3 years, which is <= 4).",
+    "discovered_at": "2026-11-17T14:44:34.001618"
+  },
+  {
+    "company": "apple",
+    "title": "Embedded Engineer for the Silicon validation team",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Herzliya / Haifa, Israel",
+    "url": "https://jobs.apple.com/en-il/details/200694733-0865/embedded-engineer-for-the-silicon-validation-team?team=HRDWR",
+    "experience": "3 years of relevant industry experience in silicon validation software engineering",
+    "discovered_at": "2026-11-17T14:46:12.304882"
+  },
+  {
+    "company": "apple",
+    "title": "Firmware Embedded - MSP",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Herzliya, Israel",
+    "url": "https://jobs.apple.com/en-il/details/200694473-0865/firmware-embedded-msp?team=SFTWR",
+    "experience": "BS in Computer Science / Electrical Engineering / Computer Engineering or equivalent experience (Entry-level / general)",
+    "discovered_at": "2026-11-17T14:46:12.304935"
+  },
+  {
+    "company": "apple",
+    "title": "Junior Wireless SoC Design Verification Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Israel",
+    "url": "https://jobs.apple.com/en-il/details/200694073-0881/junior-wireless-soc-design-verification-engineer?team=HRDWR",
+    "experience": "Junior level role requiring BS in Electrical or Computer Engineering",
+    "discovered_at": "2026-11-17T14:46:12.304941"
+  },
+  {
+    "company": "abra",
+    "title": "Air Defense Systems Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Holon",
+    "url": "https://www.abra-it.com/en/career/professional-services/air-defense-systems-engineer/",
+    "experience": "3+ years of experience in development of complex multidisciplinary software systems",
+    "discovered_at": "2026-11-17T14:47:47.582256"
+  },
+  {
+    "company": "Daylight",
+    "title": "Senior Frontend Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://job-boards.greenhouse.io/daylightsecurity/jobs/4303397009",
+    "experience": "3+ years of experience required",
+    "discovered_at": "2026-11-17T14:56:26.840924"
+  },
+  {
+    "company": "Daylight",
+    "title": "Senior Full Stack Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://job-boards.greenhouse.io/daylightsecurity/jobs/4303402009",
+    "experience": "3+ years of experience required",
+    "discovered_at": "2026-11-17T14:56:26.840940"
+  },
+  {
+    "company": "Earnix",
+    "title": "Automation Engineer Ramat Gan, Israel",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Ramat Gan",
+    "url": "https://earnix.com/career/82.473/automation-engineer/",
+    "experience": "3+ years of experience in automation or software development",
+    "discovered_at": "2026-11-17T14:58:12.649471"
+  },
+  {
+    "company": "Earnix",
+    "title": "Automation Engineer - Student Position Ramat Gan, Israel",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Ramat Gan",
+    "url": "https://earnix.com/career/79.47a/automation-engineer-student-position/",
+    "experience": "Student position requiring at least 3 semesters left to graduation",
+    "discovered_at": "2026-11-17T14:58:12.649487"
+  },
+  {
+    "company": "Earnix",
+    "title": "Automation Engineer - Student Position Ramat Gan, Israel",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Remat Gan",
+    "url": "https://earnix.com/career/36.57c/automation-engineer-student-position/",
+    "experience": "Student position requiring a minimum of 3 semesters remaining until graduation",
+    "discovered_at": "2026-11-17T14:58:14.513299"
+  },
+  {
+    "company": "Cyera",
+    "title": "Full Stack Engineer - CTO Office",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://www.comeet.com/jobs/cyera/17.008/full-stack-engineer---cto-office/03.173",
+    "experience": "At least 4 years of experience as a developer",
+    "discovered_at": "2026-11-17T15:08:29.917600"
+  },
+  {
+    "company": "Fullpath",
+    "title": "Fullstack Engineer - CDP",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv-Yafo",
+    "url": "https://www.comeet.com/jobs/fullpath/54.002/fullstack-engineer---cdp/6C.478",
+    "experience": "2-4 years of Fullstack Software development experience",
+    "discovered_at": "2026-11-17T15:12:44.621524"
+  },
+  {
+    "company": "hiBob",
+    "title": "Frontend Engineer Permanent | Israel",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Israel",
+    "url": "https://hibob-fa0ad69d0cb34a.careers.hibob.com/jobs/53939773-777e-4976-a34c-8d79ee5f8f8f",
+    "experience": "4+ years of professional frontend development experience",
+    "discovered_at": "2026-11-17T15:17:45.913105"
+  },
+  {
+    "company": "Island",
+    "title": "Senior Software Engineer Tel Aviv",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://www.island.io/positions/position-4e_d3d",
+    "experience": "No explicit minimum YOE specified; fits 0-4 YOE criteria.",
+    "discovered_at": "2026-11-17T15:20:30.205183"
+  },
+  {
+    "company": "KPMG",
+    "title": "Data Engineer תל אביב Technology consulting More details",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://kpmg.co.il/technologyconsulting/careers/jobs/data-engineer-2",
+    "experience": "Requires 3+ years of experience in data engineering, which falls into the 0-4 YOE range.",
+    "discovered_at": "2026-11-17T15:27:07.969041"
+  },
+  {
+    "company": "KPMG",
+    "title": "GenAI Engineer תל אביב Technology consulting More details",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://kpmg.co.il/technologyconsulting/careers/jobs/genai-engineer",
+    "experience": "Requires 2+ years in AI/ML development with GenAI project experience, which falls into the 0-4 YOE range.",
+    "discovered_at": "2026-11-17T15:27:07.969056"
+  },
+  {
+    "company": "Israel Discount Bank",
+    "title": "מנתח.ת מערכות AI & Data",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Rishon LeTsiyon",
+    "url": "https://www.comeet.com/jobs/dbank/F8.004/_--ai--data/BF.C62",
+    "experience": "Requires at least 3 years of experience in BI/Data systems analysis.",
+    "discovered_at": "2026-11-17T15:27:14.591218"
+  },
+  {
+    "company": "monday.com",
+    "title": "Agent Engineer, Luna Tel-Aviv, IL",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel-Aviv, IL",
+    "url": "https://monday.com/careers/0b0b653c-2d75-4bbb-aea1-1a805620b740",
+    "experience": "Experienced builder with strong distributed systems fundamentals (junior/entry-level or experienced candidates welcomed)",
+    "discovered_at": "2026-11-17T15:28:11.301116"
+  },
+  {
+    "company": "morning (Green Invoice)",
+    "title": "Data Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv-Yafo / Israel",
+    "url": "https://www.comeet.com/jobs/morning/67.000/data-engineer/BE.472",
+    "experience": "4+ years of experience building production data pipelines (Minimum <= 4 allowed)",
+    "discovered_at": "2026-11-17T15:30:35.385260"
+  },
+  {
+    "company": "Natural Intelligence",
+    "title": "Data AI Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://www.naturalint.com/jobs/co/tel-aviv/CA.473/data-ai-engineer/all",
+    "experience": "At least 4 years of experience",
+    "discovered_at": "2026-11-17T15:30:42.462566"
+  },
+  {
+    "company": "Logica-it",
+    "title": "Python Developer BACKEND גוש דן",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv / Israel",
+    "url": "https://logica-it.com/jobs/21297/",
+    "experience": "At least 3 years of Python experience",
+    "discovered_at": "2026-11-17T15:31:11.738148"
+  },
+  {
+    "company": "Logica-it",
+    "title": "Integration Developer תוכנה גוש דן",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Bnei Brak / Israel",
+    "url": "https://logica-it.com/jobs/21190/",
+    "experience": "4 years of experience minimum",
+    "discovered_at": "2026-11-17T15:31:11.738198"
+  },
+  {
+    "company": "Logica-it",
+    "title": "AWS Data Engineer BIG DATA גוש דן",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Lod / Israel",
+    "url": "https://logica-it.com/jobs/20441/",
+    "experience": "3+ years of experience required",
+    "discovered_at": "2026-11-17T15:31:36.892688"
+  },
+  {
+    "company": "Logica-it",
+    "title": "מהנדס/ת תשתיות Hard RT Embedded תשתיות השפלה",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Shfela / Israel",
+    "url": "https://logica-it.com/jobs/20314/",
+    "experience": "3 years of experience required",
+    "discovered_at": "2026-11-17T15:31:36.892704"
+  },
+  {
+    "company": "Logica-it",
+    "title": "iOS Developer MOBILE גוש דן",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv / Gush Dan, Israel",
+    "url": "https://logica-it.com/jobs/17689/",
+    "experience": "At least 3 years of experience in iOS development",
+    "discovered_at": "2026-11-17T15:31:47.072555"
+  },
+  {
+    "company": "Nisha Group",
+    "title": "Senior Deep Learning Researcher",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Haifa",
+    "url": "https://www.nisha.co.il/job/12933/",
+    "experience": "4 years of experience",
+    "discovered_at": "2026-11-17T15:39:51.640193"
+  },
+  {
+    "company": "Nisha Group",
+    "title": "Senior DSP FW Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Israel",
+    "url": "https://www.nisha.co.il/job/12905/",
+    "experience": "Senior level (not specified minimum years numerically in snippet, but fits target role)",
+    "discovered_at": "2026-11-17T15:39:55.909488"
+  },
+  {
+    "company": "PointFive",
+    "title": "Senior Software Engineer - Endpoint Engineering Tel Aviv Hybrid Full-time",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://www.pointfive.co/careers/bf0b9450-79ff-4234-a690-17ffafcece86",
+    "experience": "No minimum years of experience stated; role is open for evaluation.",
+    "discovered_at": "2026-11-17T15:46:12.278339"
+  },
+  {
+    "company": "opisoft",
+    "title": "BI Developer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Center District, Israel",
+    "url": "https://opisoft.com/career/bi-developer/",
+    "experience": "3 years of experience required",
+    "discovered_at": "2026-11-17T15:49:38.250838"
+  },
+  {
+    "company": "opisoft",
+    "title": "Data Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Center District, Israel",
+    "url": "https://opisoft.com/career/data-engineer/",
+    "experience": "3 years of experience required",
+    "discovered_at": "2026-11-17T15:50:32.783870"
+  },
+  {
+    "company": "opisoft",
+    "title": "Senior Full Stack Developer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Center District, Israel",
+    "url": "https://opisoft.com/career/senior-full-stack-developer/",
+    "experience": "4 years of experience required",
+    "discovered_at": "2026-11-17T15:50:32.783903"
+  },
+  {
+    "company": "opisoft",
+    "title": "Full Stack Engineer – Node.js & React",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "מרכז (Center), Israel",
+    "url": "https://opisoft.com/career/full-stack-engineer-node-js-react/",
+    "experience": "4 years of experience required",
+    "discovered_at": "2026-11-17T15:50:39.197273"
+  },
+  {
+    "company": "opisoft",
+    "title": "Power BI Developer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Center District / Israel",
+    "url": "https://opisoft.com/career/power-bi-developer/",
+    "experience": "1 year of experience required",
+    "discovered_at": "2026-11-17T15:50:52.273949"
+  },
+  {
+    "company": "Shavit Software",
+    "title": "AI Platform Developer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv / Bnei Brak",
+    "url": "https://shavit-soft.co.il/jobs/ai-platform-developer/",
+    "experience": "At least 4 years of experience required (minimum 4 years, which is <= 4 YOE criteria)",
+    "discovered_at": "2026-11-17T16:01:19.663529"
+  },
+  {
+    "company": "ServiceNow Israel",
+    "title": "Applications Dev Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Petah Tikva",
+    "url": "https://jobs.smartrecruiters.com/ServiceNow/744000162053449",
+    "experience": "0-2+ years of experience required",
+    "discovered_at": "2026-11-17T16:01:22.122828"
+  },
+  {
+    "company": "ServiceNow Israel",
+    "title": "Senior Full-Stack Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://jobs.smartrecruiters.com/ServiceNow/744000157545129",
+    "experience": "Experienced engineer (no explicit minimum years requirement stated, defaults to matching YOE rule)",
+    "discovered_at": "2026-11-17T16:01:22.122845"
+  },
+  {
+    "company": "upwind",
+    "title": "Backend Software Engineer Tel Aviv  ·  Full-time",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://www.upwind.io/careers/co/tel-aviv/BA.04A/backend-software-engineer/all",
+    "experience": "Experienced software engineer, no strict high YOE minimum specified.",
+    "discovered_at": "2026-11-17T16:02:18.908284"
+  },
+  {
+    "company": "Voyantis",
+    "title": "Senior Software Engineer Tel Aviv, Israel Apply Now",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv, Israel",
+    "url": "https://www.comeet.com/jobs/voyantis/86.00B/senior-software-engineer/12.D63",
+    "experience": "4+ years of hands-on experience",
+    "discovered_at": "2026-11-17T16:07:17.825642"
+  },
+  {
+    "company": "Wiz",
+    "title": "Backend Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://www.wiz.io/careers/job/4615162006/:title?gh_jid=4615162006",
+    "experience": "4+ years of experience with Backend Engineering",
+    "discovered_at": "2026-11-17T16:07:46.033633"
+  },
+  {
+    "company": "Wiz",
+    "title": "Low Level Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://www.wiz.io/careers/job/4378449006/:title?gh_jid=4378449006",
+    "experience": "Preferred qualifications mention 4+ years, and 0-4 YOE candidates are acceptable since the requirement minimum is <= 4 or not strictly bounded above for entry.",
+    "discovered_at": "2026-11-17T16:09:32.480460"
+  },
+  {
+    "company": "Zafran Security",
+    "title": "Backend Engineer – Discover Team",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://jobs.ashbyhq.com/zafran-security/3182fd63-e7cc-433a-a53f-47b6b3e2a3b4",
+    "experience": "3+ years of experience required, which satisfies the 0-4 YOE range (minimum is 3).",
+    "discovered_at": "2026-11-17T16:09:32.480481"
+  },
+  {
+    "company": "Hemispheric",
+    "title": "Deep Learning Research Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://job-boards.eu.greenhouse.io/hemispheric/jobs/5003287101",
+    "experience": "Experience required (assumed within range as no minimum years stated)",
+    "discovered_at": "2026-11-17T16:09:57.710732"
+  },
+  {
+    "company": "Hemispheric",
+    "title": "Deep Learning Research Scientist",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://job-boards.eu.greenhouse.io/hemispheric/jobs/5003290101",
+    "experience": "No specific years of experience mentioned, requires a PhD",
+    "discovered_at": "2026-11-17T16:10:05.869444"
+  },
+  {
+    "company": "Hemispheric",
+    "title": "Software Engineer - Experiences Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://job-boards.eu.greenhouse.io/hemispheric/jobs/5026723101",
+    "experience": "3-10 years of experience",
+    "discovered_at": "2026-11-17T16:10:05.869496"
+  },
+  {
+    "company": "Hemispheric",
+    "title": "Software Engineer - Generalist",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://job-boards.eu.greenhouse.io/hemispheric/jobs/4999613101",
+    "experience": "No specific years of experience mentioned",
+    "discovered_at": "2026-11-17T16:10:05.869503"
+  },
+  {
+    "company": "Guidde",
+    "title": "AI Engineer - Agentic Products",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv, Israel",
+    "url": "https://job-boards.eu.greenhouse.io/guidde/jobs/5025881101",
+    "experience": "No explicit minimum years stated; role is open for backend/AI engineers.",
+    "discovered_at": "2026-11-17T16:10:14.760458"
+  },
+  {
+    "company": "Guidde",
+    "title": "Software Engineer - AI-Native",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv, Israel",
+    "url": "https://job-boards.eu.greenhouse.io/guidde/jobs/5026771101",
+    "experience": "No explicit minimum years stated; product engineer role.",
+    "discovered_at": "2026-11-17T16:10:14.760480"
+  },
+  {
+    "company": "Glow",
+    "title": "Senior AI Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://jobs.ashbyhq.com/glow/18a687ac-d5de-42f4-b6b6-bf6bc0b79ebf",
+    "experience": "No minimum YOE explicitly stated, practical experience acceptable",
+    "discovered_at": "2026-11-17T16:11:36.734909"
+  },
+  {
+    "company": "Glow",
+    "title": "Senior Back End Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://jobs.ashbyhq.com/glow/3dc1f037-da92-4061-8a31-0a8eca5d9624",
+    "experience": "No minimum YOE explicitly stated",
+    "discovered_at": "2026-11-17T16:11:36.734925"
+  },
+  {
+    "company": "Coralogix",
+    "title": "Software Engineer (Coralogix AI)",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Ramat Gan",
+    "url": "https://www.comeet.com/jobs/coralogix/06.004/software-engineer-coralogix-ai/FB.254",
+    "experience": "Minimum of 4 years of experience in software development",
+    "discovered_at": "2026-11-17T16:12:01.811164"
+  },
+  {
+    "company": "Dream Security",
+    "title": "Senior Backend Engineer- Agentic AI",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv-Jaffa",
+    "url": "https://www.comeet.com/jobs/dreamgroup/99.002/senior-backend-engineer--agentic-ai/46.379",
+    "experience": "4+ years of hands-on experience building production-level backend services in Python",
+    "discovered_at": "2026-11-17T16:12:01.811187"
+  },
+  {
+    "company": "Camtek",
+    "title": "Algorithm Developer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv-Yafo, Israel",
+    "url": "https://www.comeet.com/jobs/camtek/F4.00D/algorithm-developer/8C.370",
+    "experience": "4+ years of hands-on experience in Machine Learning and Computer Vision algorithm development (minimum 4 years is allowed).",
+    "discovered_at": "2026-11-17T16:13:41.701489"
+  },
+  {
+    "company": "Camtek",
+    "title": "Algorithm Developer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv-Yafo, Israel",
+    "url": "https://www.comeet.com/jobs/camtek/F4.00D/algorithm-developer/8C.370-51.705",
+    "experience": "4+ years of hands-on experience in Machine Learning and Computer Vision algorithm development (minimum 4 years is allowed).",
+    "discovered_at": "2026-11-17T16:13:41.701511"
+  },
+  {
+    "company": "Camtek",
+    "title": "Applied AI Researcher",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Migdal HaEmek, Israel",
+    "url": "https://www.comeet.com/jobs/camtek/F4.00D/applied-ai-researcher/7D.C4C",
+    "experience": "At least 3 years of hands-on experience in the research and development of deep learning algorithms.",
+    "discovered_at": "2026-11-17T16:13:41.701522"
+  },
+  {
+    "company": "Innovid (Mediaocean)",
+    "title": "Software Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://jobs.smartrecruiters.com/Mediaocean1/3743990015947066",
+    "experience": "At least 3 years of software development experience",
+    "discovered_at": "2026-11-17T16:14:47.183595"
+  },
+  {
+    "company": "HyperGuest",
+    "title": "Senior Back End Developer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Ramat Gan / Israel",
+    "url": "https://www.comeet.com/jobs/hyperguest/09.00B/senior-back-end-developer/17.F35",
+    "experience": "4+ years of Back end development (minimum 4 years matches 0-4 YOE rule)",
+    "discovered_at": "2026-11-17T16:14:56.923110"
+  },
+  {
+    "company": "AITAN",
+    "title": "Software Engineer, Robotics & Integration",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Ramat Gan / Israel",
+    "url": "https://www.comeet.com/jobs/aitan/FA.006/software-engineer-robotics--integration/50.D64",
+    "experience": "3+ years of software development experience",
+    "discovered_at": "2026-11-17T16:14:56.923133"
+  },
+  {
+    "company": "enso",
+    "title": "R·01 · Full-time Tel Aviv · Remote-friendly Agent Engineer Ship the agents behind the five enso surfaces. Read role & apply →",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://www.enso.bot/careers/agent-engineer",
+    "experience": "At least one production-grade LLM project, no minimum YOE stated.",
+    "discovered_at": "2026-11-17T16:15:04.862038"
+  },
+  {
+    "company": "Cloudinary",
+    "title": "Senior AI Solutions Builder Hybrid — Full-time Israel",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Israel",
+    "url": "https://jobs.lever.co/cloudinary/8fcca800-21a0-4cdb-99c3-22edcf0fa400",
+    "experience": "Hands-on experience building and shipping AI tools without specific minimum YOE stated",
+    "discovered_at": "2026-11-17T16:15:06.226465"
   }
 ]

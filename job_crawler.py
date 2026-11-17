@@ -52,6 +52,8 @@ else:
 
 CONFIG_FILE = os.path.join(BASE_DIR, "config.json")
 SEEN_JOBS_FILE = os.path.join(BASE_DIR, "seen_jobs.json")
+REJECTED_JOBS_FILE = os.path.join(BASE_DIR, "rejected_jobs.json")
+REJECTED_TTL_DAYS = 30
 CHECKPOINT_FILE = os.path.join(BASE_DIR, "progress_checkpoint.json")
 OUTPUT_EXCEL = os.path.join(BASE_DIR, f"new_jobs_{datetime.now().strftime('%Y%m%d')}.xlsx")
 
@@ -125,6 +127,37 @@ def load_user_config():
 
 
 USER_CONFIG = load_user_config()
+
+
+def compute_config_hash(cfg):
+    normalized = json.dumps(cfg, sort_keys=True, ensure_ascii=False)
+    return hashlib.sha256(normalized.encode("utf-8")).hexdigest()[:16]
+
+
+def load_rejected_jobs(cfg, today=None):
+    """
+    Returns {job_hash: "YYYY-MM-DD"} of jobs already rejected under the CURRENT config.
+    Starts empty if config.json changed since the file was written; drops entries older than REJECTED_TTL_DAYS.
+    """
+    today = today or datetime.now().date()
+    data = load_json(REJECTED_JOBS_FILE, {})
+    if not isinstance(data, dict) or data.get("config_hash") != compute_config_hash(cfg):
+        if data:
+            print("[*] config.json changed (or rejected list unreadable) -> re-checking previously rejected jobs.")
+        return {}
+
+    kept = {}
+    for h, day in (data.get("jobs") or {}).items():
+        try:
+            if (today - datetime.strptime(day, "%Y-%m-%d").date()).days < REJECTED_TTL_DAYS:
+                kept[h] = day
+        except (TypeError, ValueError):
+            continue
+    return kept
+
+
+def save_rejected_jobs(cfg, rejected):
+    save_json(REJECTED_JOBS_FILE, {"config_hash": compute_config_hash(cfg), "jobs": rejected})
 TARGET_LOCATION = str(USER_CONFIG.get("location", "Israel")).strip() or "Israel"
 IS_ISRAEL_TARGET = TARGET_LOCATION.lower() in ("israel", "ישראל")
 
@@ -887,6 +920,9 @@ def main():
     companies_by_name = {c["name"]: c for c in companies}
     seen_jobs = load_json(SEEN_JOBS_FILE, [])
     seen_hashes = {compute_job_hash(j["company"], j["title"], j["url"]) for j in seen_jobs}
+    rejected_jobs = load_rejected_jobs(USER_CONFIG)
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    print(f"[*] Remembered rejections (skipped this run): {len(rejected_jobs)}")
 
     checkpoint = load_json(CHECKPOINT_FILE, {
         "scraped_companies": [],
@@ -967,7 +1003,7 @@ def main():
     candidate_hashes = set()
     for cand in direct_candidates:
         h = compute_job_hash(cand["company"], cand["title"], cand["url"])
-        if h not in seen_hashes and h not in candidate_hashes:
+        if h not in seen_hashes and h not in rejected_jobs and h not in candidate_hashes:
             candidate_hashes.add(h)
             unique_candidates.append(cand)
 
@@ -994,6 +1030,7 @@ def main():
             excessive = has_excessive_min_yoe(txt, max_allowed_yoe)
             if excessive:
                 print(f"  [X] REJECTED (Min YOE > {max_allowed_yoe}: '{excessive[1]}'): {job['company']} - {job['title']}")
+                rejected_jobs[compute_job_hash(job["company"], job["title"], job["url"])] = today_str
                 continue
             ai_ready_candidates.append(job)
 
@@ -1039,15 +1076,20 @@ def main():
                     else:
                         reason = ev.get("rejection_reason") if ev else "Unconfirmed by AI"
                         print(f"  [X] REJECTED: {job['company']} - {job['title']} (Reason: {reason})")
+                        # Remember only real AI verdicts; API errors / missing answers get retried next run.
+                        if ev:
+                            rejected_jobs[h] = today_str
 
                 checkpoint["confirmed_jobs"] = confirmed_new_jobs
                 checkpoint["pending_candidates"] = []
                 save_json(CHECKPOINT_FILE, checkpoint)
                 save_json(SEEN_JOBS_FILE, seen_jobs)
+                save_rejected_jobs(USER_CONFIG, rejected_jobs)
                 export_to_excel(confirmed_new_jobs, failed_companies, OUTPUT_EXCEL)
 
     # --- STAGE 4: Finalization ---
     save_json(SEEN_JOBS_FILE, seen_jobs)
+    save_rejected_jobs(USER_CONFIG, rejected_jobs)
     export_to_excel(confirmed_new_jobs, failed_companies, OUTPUT_EXCEL)
 
     if os.path.exists(CHECKPOINT_FILE):

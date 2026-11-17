@@ -255,7 +255,7 @@ def build_reject_title_regex(cfg):
     # Leadership / very-senior titles are always rejected, regardless of max_yoe.
     # "Senior" / "Sr" are intentionally NOT filtered here (left to the YOE guard + AI check).
     patterns.extend([
-        r"vp\b", r"director", r"chief", r"head of", r"lead\b",
+        r"vp\b", r"director", r"chief", r"head of", r"lead\b", r"leader\b",
         r"principal", r"staff\b", r"architect", r"manager\b", r"expert"
     ])
 

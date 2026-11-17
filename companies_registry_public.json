@@ -208,7 +208,8 @@
   {
     "name": "Buildots",
     "career_url": "https://buildots.com/careers/",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://www.comeet.com/jobs/buildots/36.004"
   },
   {
     "name": "Buyme",
@@ -1661,5 +1662,23 @@
     "career_url": "https://dreamgroup.com/jobs",
     "official_scrape_url": "https://www.comeet.com/jobs/dreamgroup/99.002",
     "category": "Cybersecurity"
+  },
+  {
+    "name": "Coralogix",
+    "career_url": "https://coralogix.com/careers/",
+    "official_scrape_url": "https://www.comeet.com/jobs/coralogix/06.004",
+    "category": "Core Tech / R&D"
+  },
+  {
+    "name": "Cloudinary",
+    "career_url": "https://cloudinary.com/careers",
+    "official_scrape_url": "https://jobs.lever.co/cloudinary",
+    "category": "Core Tech / R&D"
+  },
+  {
+    "name": "Camtek",
+    "career_url": "https://www.camtek.com/careers/",
+    "official_scrape_url": "https://www.comeet.com/jobs/camtek/F4.00D",
+    "category": "Semiconductors"
   }
 ]

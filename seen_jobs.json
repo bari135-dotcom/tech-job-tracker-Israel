@@ -1,1 +1,352 @@
-[]
+[
+  {
+    "company": "commit",
+    "title": "Data Engineer READ MORE",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Israel",
+    "url": "https://www.comm-it.com/jobs/data-engineer",
+    "experience": "At least 4 years as Data Engineer or BI development (matches the <= 4 years threshold)",
+    "discovered_at": "2026-11-17T09:41:13.757101"
+  },
+  {
+    "company": "commit",
+    "title": "Senior C++ Software Developer READ MORE",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Israel",
+    "url": "https://www.comm-it.com/jobs/senior-c-software-developer",
+    "experience": "3 years of experience in C/C++",
+    "discovered_at": "2026-11-17T09:41:16.153788"
+  },
+  {
+    "company": "Daylight",
+    "title": "Senior Backend Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://job-boards.greenhouse.io/daylightsecurity/jobs/4303374009",
+    "experience": "3+ years",
+    "discovered_at": "2026-11-17T09:42:24.418675"
+  },
+  {
+    "company": "Earnix",
+    "title": "Full-Stack Developer  - Maternity Leave Replacement (8 months) Ramat Gan, Israel",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Ramat Gan, Israel",
+    "url": "https://earnix.com/career/e5.470/full-stack-developer-maternity-leave-replacement-8-months/",
+    "experience": "1-2 years of hands-on software development experience",
+    "discovered_at": "2026-11-17T09:46:10.823722"
+  },
+  {
+    "company": "Earnix",
+    "title": "Junior Automation and Frontend  Developer - Maternity Leave Replacement (6 months) Ramat Gan, Israel",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Ramat Gan, Israel",
+    "url": "https://earnix.com/career/b7.372/junior-automation-and-frontend-developer-maternity-leave-replacement-6-months/",
+    "experience": "1+ years of proven experience as a Frontend or Automation Engineer",
+    "discovered_at": "2026-11-17T09:46:10.823743"
+  },
+  {
+    "company": "Fullpath",
+    "title": "Fullstack Engineer - CDP Israel: Tel Aviv More Details",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://www.fullpath.com/careers/co/israel-tel-aviv/6C.478/fullstack-engineer-cdp/all/",
+    "experience": "Junior-friendly or general experience level (no senior requirement specified)",
+    "discovered_at": "2026-11-17T09:50:00.792258"
+  },
+  {
+    "company": "group 19",
+    "title": "Data Analyst >",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Ofakim, Israel",
+    "url": "https://www.group19.org.il/dataanalyst-1",
+    "experience": "Professional course certificate or academic degree, requires Excel, SQL, and Power BI experience without explicit multi-year senior requirement.",
+    "discovered_at": "2026-11-17T09:50:27.991454"
+  },
+  {
+    "company": "Extreme",
+    "title": "Development משרה פתוחה Full Stack Developer רמת גן Development לפרטים ←",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Ramat Gan, Israel",
+    "url": "https://www.extreme.co.il/jobs/full-stack-developer-23154",
+    "experience": "At least 2 years of Full Stack development experience",
+    "discovered_at": "2026-11-17T09:50:27.991486"
+  },
+  {
+    "company": "high lander",
+    "title": "Software Engineer All Levels",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://www.highlander.io/copy-of-software-engineer-all-levels-1",
+    "experience": "All Levels (from junior engineers to senior engineers)",
+    "discovered_at": "2026-11-17T09:53:03.259418"
+  },
+  {
+    "company": "Komodor",
+    "title": "AI Software Engineer Tel Aviv > Engineering > Full time",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://komodor.com/job/4E.47C/ai-software-engineer/",
+    "experience": "Accepts flexible experience levels with backend and agent development background",
+    "discovered_at": "2026-11-17T10:00:22.501844"
+  },
+  {
+    "company": "monday.com",
+    "title": "AI Engineer (render.ai) Tel-Aviv, IL",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel-Aviv, IL",
+    "url": "https://monday.com/careers/077675a8-bfb6-47f4-a466-347561c26258",
+    "experience": "Open to startup-like environments and rapid prototyping without a strict high YOE requirement",
+    "discovered_at": "2026-11-17T10:05:16.429956"
+  },
+  {
+    "company": "Mobileye",
+    "title": "company-wide rollout of development and productivity tools",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Jerusalem",
+    "url": "https://jobs.eu.lever.co/mobileye/b1abd9a9-39f4-466b-b14b-f16013202861/apply",
+    "experience": "Entry level/Not specified minimum >= 5 years",
+    "discovered_at": "2026-11-17T10:05:54.082775"
+  },
+  {
+    "company": "Mobileye",
+    "title": "company-wide rollout of development and productivity tools",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Ramat Gan, Israel",
+    "url": "https://jobs.eu.lever.co/mobileye/e190d4bb-4ef0-4aaa-ab44-b55858a29d14/apply",
+    "experience": "Junior to mid-level/General AI implementation role accepting flexible experience",
+    "discovered_at": "2026-11-17T10:05:55.952492"
+  },
+  {
+    "company": "Next Insurance",
+    "title": "Backend Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Kfar Saba, Israel",
+    "url": "https://job-boards.greenhouse.io/nextinsurance66/jobs/7816741003",
+    "experience": "At least 3 years of proven experience in Backend development (falls within the 0-4 YOE range)",
+    "discovered_at": "2026-11-17T10:05:55.952517"
+  },
+  {
+    "company": "Next Insurance",
+    "title": "Frontend Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Kfar Saba, Israel",
+    "url": "https://job-boards.greenhouse.io/nextinsurance66/jobs/7805602003",
+    "experience": "Minimum of 2 years of hands-on experience",
+    "discovered_at": "2026-11-17T10:05:58.334255"
+  },
+  {
+    "company": "Logica-it",
+    "title": "Junior Full Stack Developer JUNIOR גוש דן",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Ramat Gan",
+    "url": "https://logica-it.com/jobs/21184/",
+    "experience": "Junior level Full Stack Developer",
+    "discovered_at": "2026-11-17T10:15:54.325929"
+  },
+  {
+    "company": "Logica-it",
+    "title": "מפתח/ת תוכנה BACKEND ירושלים יו\"ש",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "ירושלים (Jerusalem, Israel)",
+    "url": "https://logica-it.com/jobs/21015/",
+    "experience": "2-3 years of experience required",
+    "discovered_at": "2026-11-17T10:16:04.633025"
+  },
+  {
+    "company": "Logica-it",
+    "title": "מפתח/ת Data Stage BI השפלה",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "לוד (Lod, Israel)",
+    "url": "https://logica-it.com/jobs/20855/",
+    "experience": "2 years of experience minimum required",
+    "discovered_at": "2026-11-17T10:16:04.633051"
+  },
+  {
+    "company": "Logica-it",
+    "title": "Cobol Developer – ליבת העתיד BACKEND גוש דן",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "תל אביב (Tel Aviv, Israel)",
+    "url": "https://logica-it.com/jobs/20632/",
+    "experience": "at least 3 years of experience required",
+    "discovered_at": "2026-11-17T10:16:04.633056"
+  },
+  {
+    "company": "Logica-it",
+    "title": "מפתח/ת AI Full Stack Developer FULL STACK גוש דן",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "רמת גן / גוש דן השפלה",
+    "url": "https://logica-it.com/jobs/17544/",
+    "experience": "בין שנה לשנתיים ניסיון (1-2 years experience)",
+    "discovered_at": "2026-11-17T10:16:12.832730"
+  },
+  {
+    "company": "Papaya Gaming",
+    "title": "Senior Unity Engineer Tel-Aviv Tel-Aviv",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://www.papaya.com/careers/senior-unity-engineer-tel-aviv",
+    "experience": "3 years of experience as a Unity Developer (min 3 years)",
+    "discovered_at": "2026-11-17T10:16:31.184113"
+  },
+  {
+    "company": "Papaya Gaming",
+    "title": "Data Scientist Tel-Aviv Tel-Aviv",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://www.papaya.com/careers/data-scientist",
+    "experience": "4+ years of applied data science (min 4 years)",
+    "discovered_at": "2026-11-17T10:16:31.184131"
+  },
+  {
+    "company": "opisoft",
+    "title": "BI Developer – Opisoft",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "מרכז",
+    "url": "https://opisoft.com/career/bi-developer-opisoft/",
+    "experience": "ניסיון התחלתי או רקע מעשי",
+    "discovered_at": "2026-11-17T10:18:44.961151"
+  },
+  {
+    "company": "opisoft",
+    "title": "Business Data Analyst",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "ירושלים",
+    "url": "https://opisoft.com/career/business-data-analyst/",
+    "experience": "3 שנות ניסיון לפחות",
+    "discovered_at": "2026-11-17T10:18:44.961179"
+  },
+  {
+    "company": "opisoft",
+    "title": "Data Analyst – SQL & Reporting",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "מרכז",
+    "url": "https://opisoft.com/career/data-analyst-sql-reporting/",
+    "experience": "שנתייים ניסיון",
+    "discovered_at": "2026-11-17T10:18:44.961183"
+  },
+  {
+    "company": "opisoft",
+    "title": "××¨××× ×¨×¤××× ××××× ×××××¨ ×××¨×× ×××××¡ Data Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Center district, Israel",
+    "url": "https://opisoft.com/career/%d7%90%d7%a8%d7%92%d7%95%d7%9f-%d7%a8%d7%a4%d7%95%d7%90%d7%99-%d7%9e%d7%95%d7%91%d7%99%d7%9c-%d7%91%d7%90%d7%96%d7%95%d7%a8-%d7%94%d7%9e%d7%a8%d7%9b%d7%96-%d7%9e%d7%92%d7%99%d7%99%d7%a1-data-engineer/",
+    "experience": "3 years of experience required with Databricks and Apache Spark",
+    "discovered_at": "2026-11-17T10:18:52.049436"
+  },
+  {
+    "company": "opisoft",
+    "title": "Senior Full Stack Software Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Center district, Israel",
+    "url": "https://opisoft.com/career/senior-full-stack-software-engineer/",
+    "experience": "2 years of experience in full stack development",
+    "discovered_at": "2026-11-17T10:18:52.049460"
+  },
+  {
+    "company": "opisoft",
+    "title": "Digital Data Analyst",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Center district, Israel",
+    "url": "https://opisoft.com/career/digital-data-analyst/",
+    "experience": "4 years of experience in analytics",
+    "discovered_at": "2026-11-17T10:18:52.049465"
+  },
+  {
+    "company": "opisoft",
+    "title": "BI and ETL Developer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Petah Tikva / Center district, Israel",
+    "url": "https://opisoft.com/career/bi-and-etl-developer/",
+    "experience": "2 years of experience in the BI field",
+    "discovered_at": "2026-11-17T10:18:52.049468"
+  },
+  {
+    "company": "opisoft",
+    "title": "Data Platform Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "אזור מרכז (Israel)",
+    "url": "https://opisoft.com/career/data-platform-engineer/",
+    "experience": "שנתיים ניסיון Data Engineering",
+    "discovered_at": "2026-11-17T10:18:59.356927"
+  },
+  {
+    "company": "opisoft",
+    "title": "Data Analyst – Python & Data Quality",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "אזור מרכז (Israel)",
+    "url": "https://opisoft.com/career/data-analyst-python-data-quality/",
+    "experience": "Not specified (Entry level / general experience)",
+    "discovered_at": "2026-11-17T10:19:10.490158"
+  },
+  {
+    "company": "Shavit Software",
+    "title": "Prompt Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "מרכז (Center / Israel)",
+    "url": "https://shavit-soft.co.il/jobs/prompt-engineer/",
+    "experience": "Not specified (Entry-level friendly Prompt Engineer role)",
+    "discovered_at": "2026-11-17T10:32:31.843989"
+  },
+  {
+    "company": "Shavit Software",
+    "title": "Data Analyst",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Bnei Brak / Israel",
+    "url": "https://shavit-soft.co.il/jobs/data-analyst/",
+    "experience": "At least 1 year of experience required, which fits the 0-4 YOE criteria",
+    "discovered_at": "2026-11-17T10:32:37.952711"
+  },
+  {
+    "company": "upwind",
+    "title": "Research Software Engineer Tel Aviv  ·  Full-time",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Ramat Gan, Tel Aviv",
+    "url": "https://www.upwind.io/careers/co/tel-aviv/5C.D67/research-software-engineer/all",
+    "experience": "Software engineering role accepting early/general experience",
+    "discovered_at": "2026-11-17T10:33:28.921419"
+  },
+  {
+    "company": "WeDev",
+    "title": "Junior Fullstack Software Developer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Holon",
+    "url": "https://job-boards.eu.greenhouse.io/wedev/jobs/4871703101",
+    "experience": "Junior role, welcomes entry-level fullstack developers.",
+    "discovered_at": "2026-11-17T10:33:50.416023"
+  }
+]

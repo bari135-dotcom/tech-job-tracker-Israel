@@ -92,7 +92,8 @@
   {
     "name": "AppsFlyer",
     "career_url": "https://careers.appsflyer.com/",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://boards.greenhouse.io/appsflyer"
   },
   {
     "name": "Aqua Security",
@@ -332,7 +333,8 @@
   {
     "name": "Cyera",
     "career_url": "https://www.cyera.com/careers#open-positions",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://www.comeet.com/jobs/cyera/17.008"
   },
   {
     "name": "Cymotive Technologies",
@@ -502,7 +504,8 @@
   {
     "name": "Fullpath",
     "career_url": "https://www.fullpath.com/careers/",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://www.comeet.com/jobs/fullpath/54.002"
   },
   {
     "name": "Fundbox",
@@ -1032,7 +1035,8 @@
   {
     "name": "Nvidia",
     "career_url": "https://jobs.nvidia.com/careers?start=0&location=Israel&pid=893393381930&sort_by=distance&filter_include_remote=1&filter_include_relocation=0&filter_job_type=new+college+graduate%2Cintern+%28fixed+term%29",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite"
   },
   {
     "name": "Oasis Security",
@@ -1097,7 +1101,8 @@
   {
     "name": "Palo Alto Networks",
     "career_url": "https://jobs.paloaltonetworks.com/en",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://paloaltonetworks.wd5.myworkdayjobs.com/PANWExternalCareers"
   },
   {
     "name": "Pango",
@@ -1407,7 +1412,8 @@
   {
     "name": "Taboola",
     "career_url": "https://www.taboola.com/careers/jobs#team=&location=18982",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://boards.greenhouse.io/taboola"
   },
   {
     "name": "Taldor Consultants",
@@ -1572,7 +1578,8 @@
   {
     "name": "Wiz",
     "career_url": "https://www.wiz.io/careers",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://boards.greenhouse.io/wizinc"
   },
   {
     "name": "wolt",
@@ -1602,7 +1609,8 @@
   {
     "name": "Zafran Security",
     "career_url": "https://www.zafran.io/careers",
-    "category": "Cybersecurity"
+    "category": "Cybersecurity",
+    "official_scrape_url": "https://jobs.ashbyhq.com/zafran-security"
   },
   {
     "name": "Zap group",
@@ -1623,5 +1631,35 @@
     "name": "חברת בינת bynet software",
     "career_url": "https://www.bynet.co.il/career/",
     "category": "Core Tech / R&D"
+  },
+  {
+    "name": "Hemispheric",
+    "career_url": "https://www.hemispheric.ai/careers",
+    "official_scrape_url": "https://boards.greenhouse.io/hemispheric",
+    "category": "Core Tech / R&D"
+  },
+  {
+    "name": "Guidde",
+    "career_url": "https://www.guidde.com/careers",
+    "official_scrape_url": "https://boards.greenhouse.io/guidde",
+    "category": "Digital Adoption SaaS"
+  },
+  {
+    "name": "KayHut",
+    "career_url": "https://kayhut.com/careers/",
+    "official_scrape_url": "https://www.comeet.com/jobs/kayhut/F0.00B",
+    "category": "Core Tech / R&D"
+  },
+  {
+    "name": "Travel Booster",
+    "career_url": "https://www.travelbooster.com/careers/",
+    "official_scrape_url": "https://www.comeet.com/jobs/travelbooster/37.00B",
+    "category": "Core Tech / R&D"
+  },
+  {
+    "name": "Dream Security",
+    "career_url": "https://dreamgroup.com/jobs",
+    "official_scrape_url": "https://www.comeet.com/jobs/dreamgroup/99.002",
+    "category": "Cybersecurity"
   }
 ]

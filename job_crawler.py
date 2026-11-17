@@ -394,6 +394,19 @@ def test_gemini_preflight():
 
 # --- ATS API Direct Scrapers ---
 
+def is_ats_location_in_target(loc):
+    """
+    ATS boards give a structured location field, so for an Israel target we whitelist:
+    keep Israeli locations and empty / generic values ("Remote", "Unspecified"); drop any other named place.
+    """
+    if not IS_ISRAEL_TARGET:
+        return True
+    loc = str(loc or "").strip()
+    if not loc or ISRAEL_LOCATION_REGEX.search(loc):
+        return True
+    return re.fullmatch(r"(remote|unspecified|hybrid|anywhere|global)", loc, re.IGNORECASE) is not None
+
+
 def try_ats_api_scrape(company_info, url):
     """
     Detects Greenhouse, Lever, or Ashby URLs and queries their official public JSON APIs directly.
@@ -419,7 +432,7 @@ def try_ats_api_scrape(company_info, url):
                     job_url = j.get("absolute_url", "")
                     if not is_title_candidate(title, job_url):
                         continue
-                    if IS_ISRAEL_TARGET and FOREIGN_LOCATION_REGEX.search(loc) and not ISRAEL_LOCATION_REGEX.search(loc):
+                    if not is_ats_location_in_target(loc):
                         continue
                     raw_html = j.get("content", "")
                     clean_text = BeautifulSoup(raw_html, "html.parser").get_text(separator="\n", strip=True)
@@ -452,7 +465,7 @@ def try_ats_api_scrape(company_info, url):
                     job_url = j.get("hostedUrl", "")
                     if not is_title_candidate(title, job_url):
                         continue
-                    if IS_ISRAEL_TARGET and FOREIGN_LOCATION_REGEX.search(loc) and not ISRAEL_LOCATION_REGEX.search(loc):
+                    if not is_ats_location_in_target(loc):
                         continue
                     desc = j.get("descriptionPlain", "") + "\n" + "\n".join(
                         lst.get("text", "") + "\n" + BeautifulSoup(lst.get("content", ""), "html.parser").get_text("\n", strip=True)
@@ -487,7 +500,7 @@ def try_ats_api_scrape(company_info, url):
                     job_url = j.get("jobUrl", "")
                     if not is_title_candidate(title, job_url):
                         continue
-                    if IS_ISRAEL_TARGET and FOREIGN_LOCATION_REGEX.search(loc) and not ISRAEL_LOCATION_REGEX.search(loc):
+                    if not is_ats_location_in_target(loc):
                         continue
                     desc = j.get("descriptionPlain", "") or BeautifulSoup(j.get("descriptionHtml", ""), "html.parser").get_text("\n", strip=True)
                     candidates.append({
@@ -504,7 +517,135 @@ def try_ats_api_scrape(company_info, url):
         except Exception:
             pass
 
+    # 4. Comeet hosted careers page (comeet.com/jobs/<slug>/<company-uid>) - very common in Israel
+    if "comeet.com" in host and len(path_parts) >= 3 and path_parts[0] == "jobs":
+        handled, candidates = scrape_comeet_board(company_info, path_parts[1], path_parts[2])
+        if handled:
+            return True, candidates
+
+    # 5. Workday (<tenant>.wdN.myworkdayjobs.com/<site>) - filtered to the target country server-side
+    if "myworkdayjobs.com" in host and path_parts:
+        handled, candidates = scrape_workday_board(company_info, parsed.scheme, host, path_parts)
+        if handled:
+            return True, candidates
+
     return False, []
+
+
+def _ats_candidate(company_info, title, job_url, loc, text):
+    return {
+        "company": company_info["name"],
+        "title": title,
+        "url": job_url,
+        "context_snippet": f"{title} - {loc}",
+        "requirements_text": (text or "").strip()[:6000],
+        "page_location": loc,
+        "referral_contact": company_info.get("referral_contact", "הגשה ישירה באתר (ללא רפרל)"),
+        "referral_type": company_info.get("referral_type", "הגשה ישירה")
+    }
+
+
+def scrape_comeet_board(company_info, slug, uid):
+    """
+    Reads the COMPANY_POSITIONS_DATA JSON embedded in a Comeet hosted careers page.
+    The list has no descriptions; Stage 2 fetches each job page for the full text.
+    """
+    try:
+        r = requests.get(f"https://www.comeet.com/jobs/{slug}/{uid}", headers=HEADERS, timeout=15)
+        m = re.search(r"COMPANY_POSITIONS_DATA\s*=\s*(\[.*?\]);\s*\n", r.text, re.S)
+        if r.status_code != 200 or not m:
+            return False, []
+        positions = json.loads(m.group(1))
+    except Exception:
+        return False, []
+
+    candidates = []
+    for p in positions:
+        loc_info = p.get("location") or {}
+        if IS_ISRAEL_TARGET and loc_info.get("country") and loc_info.get("country") != "IL":
+            continue
+        title = (p.get("name") or "").strip()
+        job_url = p.get("url_comeet_hosted_page") or p.get("url_active_page") or ""
+        if not job_url or not is_title_candidate(title, job_url):
+            continue
+        loc = loc_info.get("city") or loc_info.get("name") or "Unspecified"
+        candidates.append(_ats_candidate(company_info, title, job_url, loc, ""))
+    return True, candidates
+
+
+def scrape_workday_board(company_info, scheme, host, path_parts):
+    """
+    Uses Workday's public CXS JSON API. Applies the country location facet so only target-country
+    jobs are listed, then fetches each title-matching job's description.
+    """
+    tenant = host.split(".")[0]
+    # Skip a leading locale segment such as "en-US"
+    site_parts = [p for p in path_parts if not re.fullmatch(r"[a-z]{2}-[A-Z]{2}", p)]
+    if not site_parts:
+        return False, []
+    site = site_parts[0]
+    base = f"{scheme or 'https'}://{host}/wday/cxs/{tenant}/{site}"
+    api_headers = dict(HEADERS, **{"Content-Type": "application/json", "Accept": "application/json"})
+    country = "Israel" if IS_ISRAEL_TARGET else TARGET_LOCATION
+
+    def list_jobs(offset, facets):
+        body = {"appliedFacets": facets, "limit": 20, "offset": offset, "searchText": ""}
+        r = requests.post(f"{base}/jobs", headers=api_headers, json=body, timeout=20)
+        r.raise_for_status()
+        return r.json()
+
+    try:
+        first = list_jobs(0, {})
+        # Prefer a country-level facet (e.g. locationHierarchy1 = Israel); fall back to every city facet in that country.
+        country_facet, city_facets = None, {}
+        for group in first.get("facets", []):
+            for v in group.get("values", []):
+                nested = v.get("values") if isinstance(v.get("values"), list) else None
+                for item, param in ([(x, v.get("facetParameter")) for x in nested] if nested
+                                    else [(v, group.get("facetParameter"))]):
+                    desc = str(item.get("descriptor", ""))
+                    if desc.strip().lower() == country.lower() and not country_facet:
+                        country_facet = (param, [item["id"]])
+                    elif country.lower() in desc.lower():
+                        city_facets.setdefault(param, []).append(item["id"])
+        if country_facet:
+            facets = {country_facet[0]: country_facet[1]}
+        elif city_facets:
+            param = max(city_facets, key=lambda k: len(city_facets[k]))
+            facets = {param: city_facets[param]}
+        else:
+            return False, []
+
+        postings, offset, total = [], 0, None
+        while total is None or offset < min(total, 1000):
+            page = list_jobs(offset, facets)
+            total = page.get("total", 0) if total is None else total
+            batch = page.get("jobPostings", [])
+            if not batch:
+                break
+            postings.extend(batch)
+            offset += len(batch)
+    except Exception:
+        return False, []
+
+    site_root = f"{scheme or 'https'}://{host}/{site}"
+    candidates = []
+    for p in postings:
+        title = (p.get("title") or "").strip()
+        ext = p.get("externalPath") or ""
+        job_url = site_root + ext
+        if not ext or not is_title_candidate(title, job_url):
+            continue
+        loc = p.get("locationsText") or country
+        text = ""
+        try:
+            d = requests.get(base + ext, headers=api_headers, timeout=15).json().get("jobPostingInfo", {})
+            text = BeautifulSoup(d.get("jobDescription", ""), "html.parser").get_text("\n", strip=True)
+            loc = d.get("location") or loc
+        except Exception:
+            pass
+        candidates.append(_ats_candidate(company_info, title, job_url, loc, text))
+    return True, candidates
 
 
 # --- HTML Scraping Logic ---
@@ -726,6 +867,12 @@ def fetch_job_details(job):
             extracted_text, detected_loc = extract_clean_text_from_soup(soup)
     except Exception:
         pass
+
+    # JS-template shells (e.g. Comeet's "{{position.name}}") carry no real description:
+    # clear them so the Playwright pass renders the page instead.
+    if re.search(r"\{\{\s*[\w.]+", extracted_text):
+        extracted_text = ""
+        detected_loc = job.get("page_location", "Unspecified")
 
     job["requirements_text"] = extracted_text
     job["page_location"] = detected_loc

@@ -770,6 +770,19 @@ def fetch_missing_details_with_playwright(jobs_list):
 
 # --- Strict 4-Way Config-Driven Batch AI Evaluation ---
 
+AI_CRITERIA_FIELDS = ("is_single_specific_job", "is_target_role", "is_matching_yoe", "is_matching_location")
+
+
+def is_ai_approved(ev):
+    """
+    Approval is derived from the four criteria, not from the model's free 'approved' flag,
+    which flash-lite sometimes contradicts. Falls back to 'approved' if the criteria are missing.
+    """
+    if all(f in ev for f in AI_CRITERIA_FIELDS):
+        return all(ev.get(f) is True for f in AI_CRITERIA_FIELDS)
+    return ev.get("approved") is True
+
+
 def batch_verify_jobs_with_ai(jobs_batch):
     min_yoe = int(USER_CONFIG.get("min_yoe", 0))
     max_yoe = int(USER_CONFIG.get("max_yoe", 2))
@@ -816,12 +829,18 @@ def batch_verify_jobs_with_ai(jobs_batch):
         f"3. Experience Level {min_yoe}-{max_yoe} YOE (is_matching_yoe):\n"
         f"   - MUST accept candidates within {min_yoe} to {max_yoe} years of experience ({student_clause}).\n"
         f"   - Ranges whose MINIMUM is <= {max_yoe} (such as '1-3 years' or '2-3 years') ARE ALLOWED.\n"
-        f"   - STRICTLY REJECT any posting whose MINIMUM required experience is >= {max_yoe + 1} years (e.g. '3+ years', '3-5 years', 'at least 3 years', '4+ years', '5+ years').\n\n"
+        f"   - The ONLY number that matters is the MINIMUM years required. 'N+ years', 'at least N years', 'N-M years' and 'N or more years' all mean MINIMUM = N.\n"
+        f"   - is_matching_yoe = true  if MINIMUM <= {max_yoe} (e.g. '{max_yoe}+ years' -> minimum {max_yoe} -> ALLOWED).\n"
+        f"   - is_matching_yoe = false ONLY if MINIMUM >= {max_yoe + 1} (e.g. '{max_yoe + 1}+ years', '{max_yoe + 1}-{max_yoe + 3} years', 'at least {max_yoe + 1} years').\n"
+        "   - If no number of years is stated, judge by the requirements text; do NOT reject just because the title says 'Senior' or 'Sr'.\n"
+        "   - Do NOT reject because the role 'seems more senior' or because skills are demanding: decide only by the stated minimum years.\n\n"
         f"4. Target Location (is_matching_location):\n"
         f"   - {location_clause}\n\n"
         "Candidate Postings:\n"
         f"{''.join(items_text)}\n"
-        "A job is APPROVED only if ALL FOUR criteria are strictly TRUE.\n\n"
+        "A job is APPROVED only if ALL FOUR criteria are strictly TRUE.\n"
+        "\"approved\" MUST equal (is_single_specific_job AND is_target_role AND is_matching_yoe AND is_matching_location). "
+        "Decide each field once; rejection_reason must name the criterion that failed and must be empty if approved.\n\n"
         "Output strictly valid JSON with this exact structure:\n"
         "{\n"
         '  "evaluations": [\n'
@@ -1055,7 +1074,7 @@ def main():
                     ev = eval_map.get(idx)
                     h = compute_job_hash(job["company"], job["title"], job["url"])
 
-                    if ev and ev.get("approved"):
+                    if ev and is_ai_approved(ev):
                         location = ev.get("detected_city") or TARGET_LOCATION
                         exp_sum = ev.get("experience_summary") or default_exp_label
 

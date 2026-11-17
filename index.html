@@ -690,6 +690,7 @@
       --st-yellow: #A16207;   --st-yellow-bg: #FEF9C3;
       --st-orange: #C2410C;   --st-orange-bg: #FFEDD5;
       --st-purple: #7E22CE;   --st-purple-bg: #F3E8FF;
+      --st-blue: #1D4ED8;     --st-blue-bg: #DBEAFE;
       --st-green: #15803D;    --st-green-bg: #DCFCE7;
       --st-darkgreen: #FFFFFF; --st-darkgreen-bg: #166534;
       --st-red: #B91C1C;      --st-red-bg: #FEE2E2;
@@ -719,6 +720,7 @@
     .status-yellow { background-color: var(--st-yellow-bg); color: var(--st-yellow); }
     .status-orange { background-color: var(--st-orange-bg); color: var(--st-orange); }
     .status-purple { background-color: var(--st-purple-bg); color: var(--st-purple); }
+    .status-blue { background-color: var(--st-blue-bg); color: var(--st-blue); }
     .status-green { background-color: var(--st-green-bg); color: var(--st-green); }
     .status-darkgreen { background-color: var(--st-darkgreen-bg); color: var(--st-darkgreen); }
     .status-red { background-color: var(--st-red-bg); color: var(--st-red); }
@@ -729,6 +731,7 @@
     .dot-yellow { background: #EAB308; }
     .dot-orange { background: #F97316; }
     .dot-purple { background: #A855F7; }
+    .dot-blue { background: #3B82F6; }
     .dot-green { background: #22C55E; }
     .dot-darkgreen { background: #166534; }
     .dot-red { background: #EF4444; }
@@ -736,6 +739,7 @@
     .job-card.status-border-yellow { border-top: 3px solid #EAB308; }
     .job-card.status-border-orange { border-top: 3px solid #F97316; }
     .job-card.status-border-purple { border-top: 3px solid #A855F7; }
+    .job-card.status-border-blue { border-top: 3px solid #3B82F6; }
     .job-card.status-border-green { border-top: 3px solid #22C55E; }
     .job-card.status-border-darkgreen { border-top: 3px solid #166534; }
     .job-card.status-border-red { border-top: 3px solid #EF4444; }
@@ -1065,6 +1069,7 @@
     const STATUSES = [
       { id: 'new',                label: 'חדשה',                       color: 'gray' },
       { id: 'pending_connection', label: 'ממתין לאישור חברות',          color: 'yellow' },
+      { id: 'message_pending',    label: 'ממתין לשליחת הודעה',          color: 'blue' },
       { id: 'referral_requested', label: 'ביקשתי הפניה',                color: 'orange' },
       { id: 'cv_sent',            label: 'שלחתי קו״ח – ממתין להגשה',    color: 'purple' },
       { id: 'applied',            label: 'הוגשתי',                      color: 'green' },
@@ -1073,7 +1078,7 @@
     ];
     const STATUS_BY_ID = Object.fromEntries(STATUSES.map(s => [s.id, s]));
     const REJECT_REASONS = ['', 'דחייה', 'המשרה נסגרה', 'לא מתאים'];
-    const ACTIVE_STATUSES = ['pending_connection', 'referral_requested', 'cv_sent'];
+    const ACTIVE_STATUSES = ['pending_connection', 'message_pending', 'referral_requested', 'cv_sent'];
     const SUBMITTED_STATUSES = ['applied', 'interview'];
     const FOLLOWUP_DAYS = 7;
 
@@ -1081,6 +1086,7 @@
     const TABS = [
       { id: 'new', label: 'חדשות' },
       { id: 'pending_connection', label: 'ממתין לחברות' },
+      { id: 'message_pending', label: 'ממתין לשליחת הודעה' },
       { id: 'referral_requested', label: 'ביקשתי הפניה' },
       { id: 'cv_sent', label: 'שלחתי קו״ח' },
       { id: 'applied', label: 'הוגשתי' },
@@ -1543,9 +1549,16 @@
           // Accept a full backup or a bare states object from an older export.
           const incoming = migrateStatesCopy(parsed.states && typeof parsed.states === 'object' ? parsed.states : parsed);
           let added = 0, updated = 0;
+          // mode "fill_untouched": a generated file that may only set jobs you haven't worked on yet.
+          const fillOnly = parsed.mode === 'fill_untouched';
           Object.entries(incoming).forEach(([h, s]) => {
             const mine = userStates[h];
             if (!mine) { userStates[h] = s; added++; return; }
+            if (fillOnly) {
+              const untouched = mine.status === 'new' && !mine.contacts && !mine.notes;
+              if (untouched) { userStates[h] = { ...s, saved: mine.saved || s.saved }; updated++; }
+              return;
+            }
             const theirsAt = Date.parse(s.updated_at || 0) || 0;
             const mineAt = Date.parse(mine.updated_at || 0) || 0;
             if (theirsAt > mineAt) { userStates[h] = s; updated++; }

@@ -1556,7 +1556,19 @@
             if (!mine) { userStates[h] = s; added++; return; }
             if (fillOnly) {
               const untouched = mine.status === 'new' && !mine.contacts && !mine.notes;
-              if (untouched) { userStates[h] = { ...s, saved: mine.saved || s.saved }; updated++; }
+              if (untouched) { userStates[h] = { ...s, saved: mine.saved || s.saved }; updated++; return; }
+              // An entry with "from_status" may move a job you're working on one step forward, but only
+              // while it is still in that status. Your contacts and notes are kept; its note is appended.
+              if (s.from_status && mine.status === s.from_status) {
+                userStates[h] = {
+                  ...mine,
+                  status: s.status,
+                  notes: [mine.notes, s.notes].filter(Boolean).join(' · '),
+                  history: [...(mine.history || []), ...(s.history || [])],
+                  updated_at: s.updated_at,
+                };
+                updated++;
+              }
               return;
             }
             const theirsAt = Date.parse(s.updated_at || 0) || 0;

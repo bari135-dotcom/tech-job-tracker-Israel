@@ -716,7 +716,8 @@
   {
     "name": "JFrog",
     "career_url": "https://join.jfrog.com/",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://boards.greenhouse.io/jfrog"
   },
   {
     "name": "jifiti",

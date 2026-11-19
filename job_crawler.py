@@ -452,9 +452,10 @@ def try_ats_api_scrape(company_info, url):
             pass
 
     # 2. Lever API
-    if "jobs.lever.co" in host and path_parts:
+    if host in ("jobs.lever.co", "jobs.eu.lever.co") and path_parts:
         slug = path_parts[0]
-        api_url = f"https://api.lever.co/v0/postings/{slug}?mode=json"
+        api_host = "api.eu.lever.co" if host == "jobs.eu.lever.co" else "api.lever.co"
+        api_url = f"https://{api_host}/v0/postings/{slug}?mode=json"
         try:
             r = requests.get(api_url, timeout=10)
             if r.status_code == 200:
@@ -1090,6 +1091,9 @@ def batch_verify_jobs_with_ai(jobs_batch):
         data = call_gemini_with_retries(payload, timeout=45)
         raw_text = data["candidates"][0]["content"]["parts"][0]["text"].strip()
         parsed = json.loads(raw_text)
+        # The model sometimes returns the evaluations list itself instead of {"evaluations": [...]}.
+        if isinstance(parsed, list):
+            return parsed
         return parsed.get("evaluations", [])
     except Exception as e:
         print(f"    [!] Error during batch AI verification: {e}")

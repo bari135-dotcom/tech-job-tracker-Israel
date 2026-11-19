@@ -108,7 +108,8 @@
   {
     "name": "Armis",
     "career_url": "https://www.armis.com/careers/",
-    "category": "Cybersecurity"
+    "category": "Cybersecurity",
+    "official_scrape_url": "https://jobs.smartrecruiters.com/armis"
   },
   {
     "name": "arplus (Startup)",
@@ -133,7 +134,8 @@
   {
     "name": "Axonius",
     "career_url": "https://www.axonius.com/careers",
-    "category": "Cybersecurity"
+    "category": "Cybersecurity",
+    "official_scrape_url": "https://boards.greenhouse.io/axonius"
   },
   {
     "name": "Bank Leumi",
@@ -173,7 +175,8 @@
   {
     "name": "biocatch",
     "career_url": "https://www.biocatch.com/cybersecurity-careers",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://jobs.lever.co/biocatch"
   },
   {
     "name": "Bluevoyant",
@@ -244,7 +247,8 @@
   {
     "name": "Cato Networks",
     "career_url": "https://www.catonetworks.com/careers/",
-    "category": "Cybersecurity"
+    "category": "Cybersecurity",
+    "official_scrape_url": "https://boards.greenhouse.io/catonetworks"
   },
   {
     "name": "CBC ISRAEL",
@@ -309,7 +313,8 @@
   {
     "name": "Connecteam",
     "career_url": "https://connecteam.com/careers/",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://boards.greenhouse.io/connecteam"
   },
   {
     "name": "Crazy Labs",
@@ -319,7 +324,8 @@
   {
     "name": "Crusoe AI",
     "career_url": "https://www.crusoe.ai/about/careers?location=Tel+Aviv+-+IL#open-roles",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://jobs.ashbyhq.com/crusoe"
   },
   {
     "name": "CyberArk (Palo Alto Networks)",
@@ -395,7 +401,8 @@
   {
     "name": "Descope",
     "career_url": "https://www.descope.com/careers",
-    "category": "Cybersecurity / Auth"
+    "category": "Cybersecurity / Auth",
+    "official_scrape_url": "https://boards.greenhouse.io/descope"
   },
   {
     "name": "Dialog",
@@ -415,7 +422,8 @@
   {
     "name": "duda",
     "career_url": "https://www.duda.co/careers?countrycode=IL",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://boards.greenhouse.io/duda"
   },
   {
     "name": "Earnix",
@@ -546,7 +554,8 @@
   {
     "name": "Gong.io",
     "career_url": "https://www.gong.io/careers",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://boards.greenhouse.io/gongio"
   },
   {
     "name": "Google",
@@ -631,7 +640,8 @@
   {
     "name": "HoneyBook",
     "career_url": "https://www.honeybook.com/careers",
-    "category": "Business Management SaaS"
+    "category": "Business Management SaaS",
+    "official_scrape_url": "https://jobs.ashbyhq.com/honeybook"
   },
   {
     "name": "Horizon Technologies (EMET group)",
@@ -772,7 +782,8 @@
   {
     "name": "Lendbuzz",
     "career_url": "https://www.lendbuzz.com/careers",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://jobs.lever.co/lendbuzz"
   },
   {
     "name": "Lightricks",
@@ -917,7 +928,8 @@
   {
     "name": "Mobileye",
     "career_url": "https://careers.mobileye.com/jobs",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://jobs.eu.lever.co/mobileye"
   },
   {
     "name": "monday.com",
@@ -927,7 +939,8 @@
   {
     "name": "Moon Active",
     "career_url": "https://www.moonactive.com/careers/",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://jobs.ashbyhq.com/moonactive"
   },
   {
     "name": "morning (Green Invoice)",
@@ -957,7 +970,8 @@
   {
     "name": "My Heritage",
     "career_url": "https://careers.myheritage.com/",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://boards.greenhouse.io/myheritage"
   },
   {
     "name": "Nanox.vision",
@@ -1002,12 +1016,14 @@
   {
     "name": "Nexxen",
     "career_url": "https://nexxen.com/careers/careers-opportunities/",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://jobs.ashbyhq.com/nexxen"
   },
   {
     "name": "nice",
     "career_url": "https://www.nice.com/careers/apply?location=Israel+-+Raanana",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://boards.greenhouse.io/nice"
   },
   {
     "name": "nilus",
@@ -1063,7 +1079,8 @@
   {
     "name": "Optimove",
     "career_url": "https://www.optimove.com/careers#location=Israel",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://boards.greenhouse.io/optimove"
   },
   {
     "name": "Oracle Israel",
@@ -1073,7 +1090,8 @@
   {
     "name": "Orca Security",
     "career_url": "https://orca.security/careers/",
-    "category": "Cybersecurity"
+    "category": "Cybersecurity",
+    "official_scrape_url": "https://boards.greenhouse.io/orcasecurity"
   },
   {
     "name": "ORS",
@@ -1098,7 +1116,8 @@
   {
     "name": "Palantir Israel",
     "career_url": "https://jobs.lever.co/palantir",
-    "category": "Data Analytics & AI"
+    "category": "Data Analytics & AI",
+    "official_scrape_url": "https://jobs.lever.co/palantir"
   },
   {
     "name": "Palo Alto Networks",
@@ -1134,7 +1153,8 @@
   {
     "name": "Payoneer",
     "career_url": "https://www.payoneer.com/careers/",
-    "category": "Fintech / Payments"
+    "category": "Fintech / Payments",
+    "official_scrape_url": "https://boards.greenhouse.io/payoneer"
   },
   {
     "name": "PayPal Israel",
@@ -1194,7 +1214,8 @@
   {
     "name": "PointFive",
     "career_url": "https://www.pointfive.co/careers",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://jobs.ashbyhq.com/pointfive"
   },
   {
     "name": "Prelysis",
@@ -1249,7 +1270,8 @@
   {
     "name": "Redis",
     "career_url": "https://redis.io/careers/",
-    "category": "Database & Infrastructure"
+    "category": "Database & Infrastructure",
+    "official_scrape_url": "https://jobs.ashbyhq.com/redis"
   },
   {
     "name": "Retama Software Solutions",
@@ -1264,7 +1286,8 @@
   {
     "name": "Riskified",
     "career_url": "https://www.riskified.com/careers/",
-    "category": "Fintech / E-Commerce"
+    "category": "Fintech / E-Commerce",
+    "official_scrape_url": "https://boards.greenhouse.io/riskified"
   },
   {
     "name": "Rony Come",
@@ -1350,12 +1373,14 @@
   {
     "name": "SimilarWeb LTD",
     "career_url": "https://www.similarweb.com/corp/careers/",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://boards.greenhouse.io/similarweb"
   },
   {
     "name": "Sisense",
     "career_url": "https://www.sisense.com/careers/",
-    "category": "BI & Analytics"
+    "category": "BI & Analytics",
+    "official_scrape_url": "https://jobs.ashbyhq.com/sisense"
   },
   {
     "name": "SITE 123",
@@ -1365,7 +1390,8 @@
   {
     "name": "Snyk",
     "career_url": "https://snyk.io/careers/",
-    "category": "Cybersecurity"
+    "category": "Cybersecurity",
+    "official_scrape_url": "https://jobs.ashbyhq.com/snyk"
   },
   {
     "name": "SodaStream",
@@ -1395,7 +1421,8 @@
   {
     "name": "Sweet Security",
     "career_url": "https://sweet.security/careers",
-    "category": "Cybersecurity"
+    "category": "Cybersecurity",
+    "official_scrape_url": "https://boards.greenhouse.io/sweetsecurity"
   },
   {
     "name": "Swimm",
@@ -1476,7 +1503,8 @@
   {
     "name": "Torq",
     "career_url": "https://job-boards.greenhouse.io/torq?offices%5B%5D=4003830004",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://boards.greenhouse.io/torq"
   },
   {
     "name": "tower",
@@ -1516,7 +1544,8 @@
   {
     "name": "Unit",
     "career_url": "https://www.unit.co/careers",
-    "category": "Banking as a Service"
+    "category": "Banking as a Service",
+    "official_scrape_url": "https://jobs.ashbyhq.com/unit"
   },
   {
     "name": "upwind",
@@ -1536,7 +1565,8 @@
   {
     "name": "VIA",
     "career_url": "https://ridewithvia.com/careers/jobs",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://boards.greenhouse.io/via"
   },
   {
     "name": "Voyantis",
@@ -1546,7 +1576,8 @@
   {
     "name": "WalkMe",
     "career_url": "https://www.walkme.com/careers/",
-    "category": "Digital Adoption SaaS"
+    "category": "Digital Adoption SaaS",
+    "official_scrape_url": "https://jobs.lever.co/walkme"
   },
   {
     "name": "Walnut",
@@ -1561,7 +1592,8 @@
   {
     "name": "WeDev",
     "career_url": "https://job-boards.eu.greenhouse.io/wedev",
-    "category": "Software Agency"
+    "category": "Software Agency",
+    "official_scrape_url": "https://boards.greenhouse.io/wedev"
   },
   {
     "name": "Western Digital Israel",
@@ -1587,7 +1619,8 @@
   {
     "name": "wolt",
     "career_url": "https://careers.wolt.com/en/jobs?location=Israel",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://boards.greenhouse.io/wolt"
   },
   {
     "name": "WSC Sports",

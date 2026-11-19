@@ -20,14 +20,10 @@
     "category": "Core Tech / R&D"
   },
   {
-    "name": "Akamai",
-    "career_url": "https://jobs.akamai.com/",
-    "category": "Core Tech / R&D"
-  },
-  {
     "name": "Akamai Technologies",
     "career_url": "https://jobs.akamai.com/en/sites/CX_1/jobs?location=Israel&locationId=300000000469279&locationLevel=country&mode=location",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://fa-extu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1?publicHost=jobs.akamai.com&locationId=300000000469279"
   },
   {
     "name": "Alice (Formerly ActiveFence)",
@@ -129,7 +125,8 @@
   {
     "name": "Atera",
     "career_url": "https://www.atera.com/careers/",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://www.comeet.com/jobs/atera/63.00B"
   },
   {
     "name": "Axonius",
@@ -222,7 +219,8 @@
   {
     "name": "Cadence Israel",
     "career_url": "https://cadence.wd1.myworkdayjobs.com/CADENCE",
-    "category": "Electronic Design Automation"
+    "category": "Electronic Design Automation",
+    "official_scrape_url": "https://cadence.wd1.myworkdayjobs.com/External_Careers"
   },
   {
     "name": "CallMarker‎‏",
@@ -539,7 +537,8 @@
   {
     "name": "Gett",
     "career_url": "https://www.gett.com/careers/",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://www.comeet.com/jobs/gett/A0.002"
   },
   {
     "name": "Global-e",
@@ -990,7 +989,7 @@
   },
   {
     "name": "Nayax",
-    "career_url": "https://www.nayax.com/careers/",
+    "career_url": "https://www.nayax.com/careers/department/rd/",
     "category": "Core Tech / R&D"
   },
   {
@@ -1230,7 +1229,8 @@
   {
     "name": "Qualcomm Israel",
     "career_url": "https://qualcomm.wd5.myworkdayjobs.com/External",
-    "category": "Semiconductors / Wireless"
+    "category": "Semiconductors / Wireless",
+    "official_scrape_url": "https://careers.qualcomm.com/careers?domain=qualcomm.com"
   },
   {
     "name": "Qualitest",
@@ -1436,8 +1436,9 @@
   },
   {
     "name": "Synopsys Israel",
-    "career_url": "https://synopsys.wd1.myworkdayjobs.com/Synopsys_Careers",
-    "category": "EDA & Semiconductor IP"
+    "career_url": "https://careers.synopsys.com/search-jobs/Israel/44408/2/294640/31x5/34x75/50/2",
+    "category": "EDA & Semiconductor IP",
+    "official_scrape_url": "https://careers.synopsys.com/search-jobs/Israel/44408/2/294640/31x5/34x75/50/2"
   },
   {
     "name": "Taboola",

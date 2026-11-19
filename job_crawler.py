@@ -25,7 +25,7 @@ import time
 import hashlib
 import threading
 from datetime import datetime
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin, urlparse, parse_qs
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from dotenv import load_dotenv
@@ -537,7 +537,151 @@ def try_ats_api_scrape(company_info, url):
         if handled:
             return True, candidates
 
+    query = parse_qs(parsed.query)
+
+    # 6b. TalentBrew (Radancy) career sites: <host>/search-jobs/<location>/... already filtered by location
+    if path_parts[:1] == ["search-jobs"]:
+        handled, candidates = scrape_talentbrew_search(company_info, url)
+        if handled:
+            return True, candidates
+
+    # 7. Oracle Recruiting Cloud (<pod>.oraclecloud.com/hcmUI/CandidateExperience/en/sites/<site>[?publicHost=..&locationId=..])
+    if "oraclecloud.com" in host and "sites" in path_parts:
+        site = path_parts[path_parts.index("sites") + 1] if len(path_parts) > path_parts.index("sites") + 1 else ""
+        if site:
+            handled, candidates = scrape_oracle_hcm_board(company_info, host, site,
+                                                          (query.get("publicHost") or [host])[0],
+                                                          (query.get("locationId") or [""])[0])
+            if handled:
+                return True, candidates
+
+    # 8. Eightfold career sites (<host>/careers?domain=<company domain>) - public PCSX search API
+    if path_parts[:1] == ["careers"] and query.get("domain"):
+        handled, candidates = scrape_eightfold_board(company_info, f"{parsed.scheme or 'https'}://{host}", query["domain"][0])
+        if handled:
+            return True, candidates
+
     return False, []
+
+
+def scrape_talentbrew_search(company_info, url):
+    """TalentBrew search pages are server-rendered: each result is <a href="/job/..."><h2>title</h2>
+    <span class="job-location">. The job page itself is static HTML, so Stage 2 reads the description."""
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=20)
+        r.raise_for_status()
+    except Exception:
+        return False, []
+    soup = BeautifulSoup(r.text, "html.parser")
+    candidates, seen = [], set()
+    for a in soup.select('a[href^="/job/"]'):
+        h2 = a.find("h2")
+        title = (h2.get_text(" ", strip=True) if h2 else "").strip()
+        job_url = urljoin(url, a["href"])
+        if not title or job_url in seen:
+            continue
+        seen.add(job_url)
+        loc_el = a.select_one(".job-location")
+        loc = loc_el.get_text(" ", strip=True) if loc_el else "Unspecified"
+        if not is_title_candidate(title, job_url) or not is_ats_location_in_target(loc):
+            continue
+        candidates.append(_ats_candidate(company_info, title, job_url, loc, ""))
+    return True, candidates
+
+
+def scrape_oracle_hcm_board(company_info, host, site, public_host, location_id=""):
+    """Oracle Recruiting Cloud: the candidate-experience REST API is public (no auth), even when the
+    company's own careers domain is behind a bot wall."""
+    api = f"https://{host}/hcmRestApi/resources/latest"
+    reqs, offset = [], 0
+    try:
+        while True:
+            finder = f"findReqs;siteNumber={site},limit=100,offset={offset},sortBy=POSTING_DATES_DESC"
+            if location_id:
+                finder += f",locationId={location_id}"
+            r = requests.get(f"{api}/recruitingCEJobRequisitions",
+                             params={"onlyData": "true", "expand": "requisitionList.secondaryLocations", "finder": finder},
+                             headers=HEADERS, timeout=20)
+            r.raise_for_status()
+            item = (r.json().get("items") or [{}])[0]
+            batch = item.get("requisitionList") or []
+            reqs.extend(batch)
+            offset += len(batch)
+            if not batch or offset >= min(item.get("TotalJobsCount") or 0, 1000):
+                break
+    except Exception:
+        return False, []
+
+    candidates = []
+    for q in reqs:
+        title = (q.get("Title") or "").strip()
+        locs = [q.get("PrimaryLocation") or ""] + [x.get("Name", "") for x in (q.get("secondaryLocations") or [])]
+        loc = q.get("PrimaryLocation") or "Unspecified"
+        job_url = f"https://{public_host}/en/sites/{site}/job/{q.get('Id')}"
+        if not q.get("Id") or not is_title_candidate(title, job_url):
+            continue
+        if not any(is_ats_location_in_target(l) for l in locs):
+            continue
+        text = ""
+        try:
+            d = requests.get(f"{api}/recruitingCEJobRequisitionDetails",
+                             params={"expand": "all", "onlyData": "true",
+                                     "finder": f'ById;Id="{q["Id"]}",siteNumber={site}'},
+                             headers=HEADERS, timeout=20).json()["items"][0]
+            html = "\n".join(d.get(k) or "" for k in ("ExternalDescriptionStr", "ExternalResponsibilitiesStr",
+                                                         "ExternalQualificationsStr"))
+            text = BeautifulSoup(html, "html.parser").get_text("\n", strip=True)
+        except Exception:
+            pass
+        candidates.append(_ats_candidate(company_info, title, job_url, loc, text))
+    return True, candidates
+
+
+def _eightfold_get(url, params):
+    """Eightfold rate-limits quickly (HTTP 429), so pace requests and back off."""
+    for attempt in range(5):
+        r = requests.get(url, params=params, headers=HEADERS, timeout=20)
+        if r.status_code != 429:
+            r.raise_for_status()
+            time.sleep(1)
+            return r.json().get("data") or {}
+        time.sleep(5 * (attempt + 1))
+    raise RuntimeError("Eightfold rate limit")
+
+
+def scrape_eightfold_board(company_info, base, domain):
+    country = "Israel" if IS_ISRAEL_TARGET else TARGET_LOCATION
+    positions, start = [], 0
+    try:
+        while True:
+            data = _eightfold_get(f"{base}/api/pcsx/search",
+                                  {"domain": domain, "location": country, "start": start, "num": 10})
+            batch = data.get("positions") or []
+            positions.extend(batch)
+            start += len(batch)
+            if not batch or start >= min(data.get("count") or 0, 300):
+                break
+    except Exception:
+        if not positions:
+            return False, []
+
+    candidates = []
+    for p in positions:
+        title = (p.get("name") or "").strip()
+        job_url = f"{base}/careers/job/{p.get('id')}"
+        locs = p.get("locations") or []
+        if not p.get("id") or not is_title_candidate(title, job_url):
+            continue
+        if locs and not any(is_ats_location_in_target(l) for l in locs):
+            continue
+        text = ""
+        try:
+            d = _eightfold_get(f"{base}/api/pcsx/position_details", {"position_id": p["id"], "domain": domain})
+            text = BeautifulSoup(d.get("jobDescription") or "", "html.parser").get_text("\n", strip=True)
+        except Exception:
+            pass
+        candidates.append(_ats_candidate(company_info, title, job_url, ", ".join(locs) or "Unspecified", text))
+    return True, candidates
 
 
 def scrape_smartrecruiters_board(company_info, company_id):

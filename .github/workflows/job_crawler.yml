@@ -21,6 +21,10 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v5
+        with:
+          # A queued run must start from the latest main, not from the commit
+          # that was current when it was triggered (which may be hours old).
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -45,8 +49,24 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add seen_jobs.json rejected_jobs.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update seen jobs database [skip ci]" && git pull --rebase origin main && git push origin main)
+          if git diff --quiet -- seen_jobs.json rejected_jobs.json; then
+            echo "No changes to commit."; exit 0
+          fi
+          # Keep this run's results aside, then merge them into the latest main.
+          # (A plain rebase conflicts whenever main changed these files meanwhile.)
+          cp seen_jobs.json "$RUNNER_TEMP/our_seen.json"
+          cp rejected_jobs.json "$RUNNER_TEMP/our_rejected.json"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            python merge_state.py "$RUNNER_TEMP/our_seen.json" "$RUNNER_TEMP/our_rejected.json"
+            git add seen_jobs.json rejected_jobs.json
+            if git diff --staged --quiet; then echo "Nothing new after merge."; exit 0; fi
+            git commit -m "Auto-update seen jobs database [skip ci]"
+            if git push origin HEAD:main; then exit 0; fi
+            echo "Push rejected (main moved), retrying ($attempt)..."; sleep 5
+          done
+          exit 1
 
       - name: Upload Daily Excel Report
         uses: actions/upload-artifact@v6

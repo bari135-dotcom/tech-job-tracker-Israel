@@ -2308,5 +2308,85 @@
     "url": "https://jobs.nvidia.com/careers/job/893397953674",
     "experience": "0-3 years of professional experience",
     "discovered_at": "2026-11-21T14:56:46.681903"
+  },
+  {
+    "company": "AppsFlyer",
+    "title": "Software Engineer (Agent Hub)",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Herzliya",
+    "url": "https://careers.appsflyer.com/jobs/position/8957960002?gh_jid=8957960002",
+    "experience": "3-5 years of software engineering experience",
+    "discovered_at": "2026-11-22T14:10:04.475883"
+  },
+  {
+    "company": "Akamai Technologies",
+    "title": "Frontend Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Israel",
+    "url": "https://jobs.akamai.com/en/sites/CX_1/job/4487",
+    "experience": "3+ years of experience in FE development",
+    "discovered_at": "2026-11-22T14:10:04.475919"
+  },
+  {
+    "company": "Mobileye",
+    "title": "3D Deep Learning Algorithm Developer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Ramat Gan, Israel",
+    "url": "https://jobs.eu.lever.co/mobileye/7aa00e13-3ae1-4dd7-a853-cb5b2a535c6a",
+    "experience": "3+ years of experience",
+    "discovered_at": "2026-11-22T14:10:16.758654"
+  },
+  {
+    "company": "Mobileye",
+    "title": "Deep Learning Algorithm Engineer | Learned-Policy Group",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Ramat Gan, Israel",
+    "url": "https://jobs.eu.lever.co/mobileye/01a16cde-2ce4-4c80-a6df-fe56bc223816",
+    "experience": "3+ years of hands-on industry experience",
+    "discovered_at": "2026-11-22T14:10:16.758670"
+  },
+  {
+    "company": "Nisha Group",
+    "title": "Fullstack Software Developer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv / Israel",
+    "url": "https://www.nisha.co.il/job/11995/",
+    "experience": "لלא ניסיון (No experience required / Entry level)",
+    "discovered_at": "2026-11-22T14:11:00.851535"
+  },
+  {
+    "company": "Payoneer",
+    "title": "Software Developer, Payobrain",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Herzliya / Israel",
+    "url": "https://www.payoneer.com/careers/position/8392388/?gh_jid=8392388",
+    "experience": "3-5 years of experience",
+    "discovered_at": "2026-11-22T14:11:00.851557"
+  },
+  {
+    "company": "Riskified",
+    "title": "Data Scientist ",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv / Israel",
+    "url": "https://www.riskified.com/careers/job-description/?gh_jid=8653104002",
+    "experience": "2+ years of industry experience",
+    "discovered_at": "2026-11-22T14:11:00.851564"
+  },
+  {
+    "company": "Nvidia",
+    "title": "Laser Development PhD Student JR2007564 Israel, Yokneam",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Yokne'am Illit",
+    "url": "https://jobs.nvidia.com/careers/job/893391945660",
+    "experience": "Student at final MSc stages or beginning of PhD studies",
+    "discovered_at": "2026-11-22T14:11:07.816441"
   }
 ]

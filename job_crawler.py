@@ -561,7 +561,42 @@ def try_ats_api_scrape(company_info, url):
         if handled:
             return True, candidates
 
+    # 9. HiBob hosted career sites (<company-id>.careers.hibob.com)
+    if host.endswith(".careers.hibob.com"):
+        handled, candidates = scrape_hibob_careers(company_info, host)
+        if handled:
+            return True, candidates
+
     return False, []
+
+
+def scrape_hibob_careers(company_info, host):
+    """HiBob career sites are an Angular app; its job-ad API returns every ad with full text as long
+    as the request carries the company subdomain in a `companyIdentifier` header."""
+    try:
+        r = requests.get(f"https://{host}/api/job-ad",
+                         headers={**HEADERS, "Accept": "application/json",
+                                  "companyIdentifier": host.split(".")[0]}, timeout=20)
+        r.raise_for_status()
+        ads = r.json().get("jobAdDetails") or []
+    except Exception:
+        return False, []
+    candidates = []
+    for ad in ads:
+        title = (ad.get("title") or "").strip()
+        job_url = f"https://{host}/jobs/{ad.get('id')}"
+        locs = [ad.get("country") or "", ad.get("site") or ""] + [
+            str(p.get("name") or p.get("country") or p) if isinstance(p, dict) else str(p)
+            for p in (ad.get("postingLocations") or [])]
+        if not ad.get("id") or not is_title_candidate(title, job_url):
+            continue
+        if not any(l and is_ats_location_in_target(l) for l in locs):
+            continue
+        loc = ", ".join(x for x in (ad.get("country"), ad.get("workspaceType")) if x) or "Unspecified"
+        html = "\n".join(ad.get(k) or "" for k in ("description", "responsibilities", "requirements"))
+        text = BeautifulSoup(html, "html.parser").get_text("\n", strip=True)
+        candidates.append(_ats_candidate(company_info, title, job_url, loc, text))
+    return True, candidates
 
 
 def scrape_talentbrew_search(company_info, url):

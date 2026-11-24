@@ -619,7 +619,8 @@
   {
     "name": "hiBob",
     "career_url": "https://www.hibob.com/careers/#careers-board",
-    "category": "Core Tech / R&D"
+    "category": "Core Tech / R&D",
+    "official_scrape_url": "https://hibob-fa0ad69d0cb34a.careers.hibob.com/"
   },
   {
     "name": "high lander",

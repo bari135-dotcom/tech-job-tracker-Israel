@@ -2448,5 +2448,125 @@
     "url": "https://boards.eu.greenhouse.io/nice/jobs/5040105101?gh_jid=5040105101",
     "experience": "Entry to mid-level software engineering role with cloud and AI focus.",
     "discovered_at": "2026-11-24T04:02:25.206315"
+  },
+  {
+    "company": "abra",
+    "title": "ATM Systems Developer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Central Israel",
+    "url": "https://www.abra-it.com/en/career/professional-services/atm-systems-developer/",
+    "experience": "At least 4 years of hands-on experience",
+    "discovered_at": "2026-11-25T18:20:49.138555"
+  },
+  {
+    "company": "Check Point",
+    "title": "AI Engineer – Next-Generation Cyber Security",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv-Yafo, Israel",
+    "url": "https://careers.checkpoint.com/jobs/1053762/ai-engineer-next-generation-cyber-security",
+    "experience": "3+ years of professional experience in data science, AI engineering",
+    "discovered_at": "2026-11-25T18:20:49.138592"
+  },
+  {
+    "company": "Gong.io",
+    "title": "Prompt Engineer - Deals & Forecast",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Tel Aviv",
+    "url": "https://job-boards.greenhouse.io/gongio/jobs/4717015006",
+    "experience": "No specific YOE minimum stated, focuses on prompt engineering and AI/LLM background",
+    "discovered_at": "2026-11-25T18:20:50.577253"
+  },
+  {
+    "company": "hiBob",
+    "title": "GTM AI Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Israel",
+    "url": "https://hibob-fa0ad69d0cb34a.careers.hibob.com/jobs/cd9e273f-8699-4538-ba02-749b151f642d",
+    "experience": "2+ years of experience required",
+    "discovered_at": "2026-11-25T18:20:51.933514"
+  },
+  {
+    "company": "hiBob",
+    "title": "Frontend Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Israel",
+    "url": "https://hibob-fa0ad69d0cb34a.careers.hibob.com/jobs/53939773-777e-4976-a34c-8d79ee5f8f8f",
+    "experience": "4+ years of professional frontend development experience",
+    "discovered_at": "2026-11-25T18:20:51.933548"
+  },
+  {
+    "company": "Logica-it",
+    "title": "Embedded Linux Developer תוכנה גוש דן",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Gush Dan / Petah Tikva, Israel",
+    "url": "https://logica-it.com/jobs/21577/",
+    "experience": "3-4 years of experience required",
+    "discovered_at": "2026-11-25T18:20:54.808862"
+  },
+  {
+    "company": "Mobileye",
+    "title": "Algo Software Engineer",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Jerusalem, Israel",
+    "url": "https://jobs.eu.lever.co/mobileye/5b373ab2-fb86-4ce5-a393-5d838e28b2c4",
+    "experience": "3+ years of experience required",
+    "discovered_at": "2026-11-25T18:20:54.808885"
+  },
+  {
+    "company": "Mobileye",
+    "title": "Algorithm Developer for Radar/Lidar Group",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Haifa, Israel",
+    "url": "https://jobs.eu.lever.co/mobileye/331ce77a-8179-444a-924c-189f131afd50",
+    "experience": "M.Sc. or Ph.D. with no explicit minimum years of work experience",
+    "discovered_at": "2026-11-25T18:20:54.808891"
+  },
+  {
+    "company": "Mobileye",
+    "title": "Algorithm Developer Student",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Jerusalem, Israel",
+    "url": "https://jobs.eu.lever.co/mobileye/0ea9583a-7cee-48d2-91b7-efaa08725de2",
+    "experience": "Student position, 2-3 semesters left until graduation",
+    "discovered_at": "2026-11-25T18:20:54.808896"
+  },
+  {
+    "company": "Mobileye",
+    "title": "Research Engineer, Applied AI & Multimodal Models",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Ramat Gan, Israel",
+    "url": "https://jobs.eu.lever.co/mobileye/603cb801-760e-4155-be2c-f7f8951d75dc",
+    "experience": "Requires 2+ years of experience developing Machine Learning or Deep Learning algorithms.",
+    "discovered_at": "2026-11-25T18:20:56.443615"
+  },
+  {
+    "company": "Payoneer",
+    "title": "AI Platform Engineer, VibeOps",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Herzliya, Tel Aviv District, Israel",
+    "url": "https://www.payoneer.com/careers/position/8355124/?gh_jid=8355124",
+    "experience": "Requires 4+ years building production software.",
+    "discovered_at": "2026-11-25T18:20:56.443638"
+  },
+  {
+    "company": "Qualcomm Israel",
+    "title": "Embedded Software Engineer – 5G RF Firmware - Haifa",
+    "referral_contact": "הגשה ישירה באתר (ללא רפרל)",
+    "referral_type": "הגשה ישירה",
+    "location": "Haifa",
+    "url": "https://careers.qualcomm.com/careers/job/446721741525",
+    "experience": "1-3 years of hands-on experience in embedded real-time software development",
+    "discovered_at": "2026-11-25T18:21:11.652238"
   }
 ]

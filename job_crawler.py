@@ -1529,3 +1529,5 @@ if __name__ == "__main__":
     except Exception as exc:
         print(f"\n[!] Unexpected exit: {exc}")
         print("Progress checkpoint and Excel are preserved.")
+        # Fail the run so GitHub Actions shows it (and emails) instead of a silent green run.
+        sys.exit(1)

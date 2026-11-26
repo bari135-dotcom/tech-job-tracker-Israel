@@ -805,12 +805,17 @@ def scrape_comeet_board(company_info, slug, uid):
 
 # Workday tenants share infrastructure and answer bursts with HTTP 429, so scrape one tenant at a time.
 WORKDAY_LOCK = threading.Lock()
+WORKDAY_PAUSE_SECONDS = 1.0
+
+# Hashes of jobs already approved or rejected in earlier runs (filled by main() before scraping).
+# Scrapers that need one request per job for its description skip these, since Stage 2 would drop them anyway.
+KNOWN_JOB_HASHES = set()
 
 
 def workday_request(method, url, **kwargs):
-    """Workday request with a short pause and backoff on HTTP 429/503 (honors Retry-After)."""
+    """Workday request with a pause and backoff on HTTP 429/503 (honors Retry-After)."""
     for attempt in range(5):
-        time.sleep(0.4)
+        time.sleep(WORKDAY_PAUSE_SECONDS)
         r = requests.request(method, url, **kwargs)
         if r.status_code not in (429, 503):
             return r
@@ -870,7 +875,14 @@ def _scrape_workday_board(company_info, scheme, host, path_parts):
 
         postings, offset, total = [], 0, None
         while total is None or offset < min(total, 1000):
-            page = list_jobs(offset, facets)
+            try:
+                page = list_jobs(offset, facets)
+            except Exception as e:
+                if not postings:
+                    raise
+                # Rate-limited mid-list: keep the pages already collected instead of losing the whole company.
+                print(f"    [!] Workday {company_info['name']}: listing stopped at {offset}/{total} ({e}); keeping partial list")
+                break
             total = page.get("total", 0) if total is None else total
             batch = page.get("jobPostings", [])
             if not batch:
@@ -887,6 +899,9 @@ def _scrape_workday_board(company_info, scheme, host, path_parts):
         ext = p.get("externalPath") or ""
         job_url = site_root + ext
         if not ext or not is_title_candidate(title, job_url):
+            continue
+        # Already approved or rejected in an earlier run: don't spend a request on its description.
+        if compute_job_hash(company_info["name"], title, job_url) in KNOWN_JOB_HASHES:
             continue
         loc = p.get("locationsText") or country
         text = ""
@@ -1342,6 +1357,8 @@ def main():
     seen_jobs = load_json(SEEN_JOBS_FILE, [])
     seen_hashes = {compute_job_hash(j["company"], j["title"], j["url"]) for j in seen_jobs}
     rejected_jobs = load_rejected_jobs(USER_CONFIG)
+    KNOWN_JOB_HASHES.update(seen_hashes)
+    KNOWN_JOB_HASHES.update(rejected_jobs)
     today_str = datetime.now().strftime("%Y-%m-%d")
     print(f"[*] Remembered rejections (skipped this run): {len(rejected_jobs)}")
 

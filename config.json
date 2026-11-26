@@ -2,7 +2,7 @@
   "min_yoe": 0,
   "max_yoe": 4,
   "location": "Israel",
-  "include_student_and_graduate": true,
+  "include_student_and_graduate": false,
   "target_roles": [
     "Software Development",
     "Backend",

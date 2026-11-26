@@ -252,6 +252,13 @@ def build_reject_title_regex(cfg):
         patterns.extend([r"qa\b", r"manual tester", r"qc\b", r"quality assurance"])
     if "devops" in excluded_lower:
         patterns.extend([r"devops", r"sre\b", r"infrastructure engineer", r"sysadmin", r"system administrator"])
+    if not cfg.get("include_student_and_graduate", True):
+        # Student / intern / academic-degree positions. New-grad roles are still kept.
+        patterns.extend([
+            r"students?", r"interns?", r"internships?", r"working student", r"co-?op",
+            r"ph\.?\s?d\.?", r"m\.?\s?sc\.?", r"master'?s", r"post-?doc\w*", r"thesis",
+            r"סטודנט\w*", r"מתמח\w*", r"תואר שני", r"דוקטורט"
+        ])
 
     # Leadership / very-senior titles are always rejected, regardless of max_yoe.
     # "Senior" / "Sr" are intentionally NOT filtered here (left to the YOE guard + AI check).
@@ -274,8 +281,9 @@ def build_candidate_title_regex(cfg):
         r"automation", r"tools developer", r"product engineer"
     ]
 
+    base_keywords.extend([r"graduate", r"grad\b"])
     if cfg.get("include_student_and_graduate", True):
-        base_keywords.extend([r"intern\b", r"internship", r"student", r"graduate", r"grad\b"])
+        base_keywords.extend([r"intern\b", r"internship", r"student"])
 
     if int(cfg.get("max_yoe", 2)) <= 2:
         base_keywords.extend([r"junior", r"entry[\s\-_]*level"])
@@ -1207,7 +1215,8 @@ def batch_verify_jobs_with_ai(jobs_batch):
     student_clause = (
         "including Junior, Graduate, Student Developer, Intern, or Entry Level roles"
         if include_students else
-        "excluding Student/Intern roles unless they meet the full-time YOE range"
+        "STRICTLY REJECT Student, Intern, Working Student, PhD, MSc/Master's or Postdoc positions; "
+        "full-time New Grad / Entry Level roles are fine"
     )
 
     location_clause = (
